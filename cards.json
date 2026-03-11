@@ -1,0 +1,225 @@
+{
+  "title": "Intelig\u00eancia Fichas",
+  "cards": [
+    {
+      "front": "Qual \u00e9 a defini\u00e7\u00e3o b\u00e1sica de Intelig\u00eancia Artificial (IA)?",
+      "back": "Sistemas computacionais capazes de realizar tarefas tipicamente associadas \u00e0 intelig\u00eancia humana, como aprendizagem e resolu\u00e7\u00e3o de problemas."
+    },
+    {
+      "front": "Em que ano e evento a Intelig\u00eancia Artificial foi fundada como disciplina acad\u00eamica?",
+      "back": "Em 1956, durante um workshop no Dartmouth College."
+    },
+    {
+      "front": "O que caracteriza o per\u00edodo conhecido como 'Inverno da IA'?",
+      "back": "Per\u00edodos de desilus\u00e3o e perda de financiamento para pesquisas na \u00e1rea ap\u00f3s ciclos de otimismo exagerado."
+    },
+    {
+      "front": "Qual avan\u00e7o tecnol\u00f3gico em 2012 impulsionou o crescimento do interesse e financiamento em IA?",
+      "back": "O uso de unidades de processamento gr\u00e1fico (GPUs) para acelerar redes neurais e o sucesso do aprendizado profundo (deep learning)."
+    },
+    {
+      "front": "O que \u00e9 a Intelig\u00eancia Artificial Geral (AGI)?",
+      "back": "Uma forma hipot\u00e9tica de IA capaz de realizar virtualmente qualquer tarefa cognitiva t\u00e3o bem ou melhor que um ser humano."
+    },
+    {
+      "front": "No contexto da resolu\u00e7\u00e3o de problemas, o que significa a 'explos\u00e3o combinat\u00f3ria'?",
+      "back": "O fen\u00f4meno onde algoritmos tornam-se exponencialmente mais lentos \u00e0 medida que o tamanho do problema aumenta."
+    },
+    {
+      "front": "Termo: Ontologia (em IA)",
+      "back": "Representa\u00e7\u00e3o de conhecimento como um conjunto de conceitos dentro de um dom\u00ednio e as rela\u00e7\u00f5es entre eles."
+    },
+    {
+      "front": "Como um agente racional toma decis\u00f5es no campo da IA?",
+      "back": "Calculando a 'utilidade esperada' de cada a\u00e7\u00e3o e escolhendo aquela que maximiza as chances de atingir seus objetivos."
+    },
+    {
+      "front": "Qual \u00e9 a diferen\u00e7a fundamental entre aprendizagem supervisionada e n\u00e3o supervisionada?",
+      "back": "A supervisionada utiliza dados rotulados com respostas esperadas, enquanto a n\u00e3o supervisionada identifica padr\u00f5es em dados sem r\u00f3tulos."
+    },
+    {
+      "front": "O que define a t\u00e9cnica de 'aprendizagem por refor\u00e7o'?",
+      "back": "O agente aprende a escolher respostas 'boas' atrav\u00e9s de um sistema de recompensas e puni\u00e7\u00f5es."
+    },
+    {
+      "front": "Qual arquitetura de rede neural, introduzida em 2017, acelerou o progresso em modelos de linguagem generativa?",
+      "back": "A arquitetura Transformer, que utiliza mecanismos de aten\u00e7\u00e3o."
+    },
+    {
+      "front": "O que \u00e9 o 'Processamento de Linguagem Natural' (PLN)?",
+      "back": "Subcampo da IA que permite que programas leiam, escrevam e se comuniquem em linguagens humanas."
+    },
+    {
+      "front": "No contexto de modelos GPT, o que s\u00e3o 'alucina\u00e7\u00f5es'?",
+      "back": "A tend\u00eancia do modelo de gerar informa\u00e7\u00f5es falsas ou sem sentido de forma coerente."
+    },
+    {
+      "front": "Como funciona o algoritmo de 'descida de gradiente' no treinamento de redes neurais?",
+      "back": "Ajusta incrementalmente os par\u00e2metros num\u00e9ricos para minimizar uma fun\u00e7\u00e3o de perda."
+    },
+    {
+      "front": "O que postula o 'Paradoxo de Moravec'?",
+      "back": "Tarefas de alto n\u00edvel (como l\u00f3gica e \u00e1lgebra) s\u00e3o f\u00e1ceis para a IA, mas tarefas de baixo n\u00edvel (como percep\u00e7\u00e3o sensorial) s\u00e3o extremamente dif\u00edceis."
+    },
+    {
+      "front": "Qual \u00e9 a fun\u00e7\u00e3o b\u00e1sica de um 'classificador' em IA?",
+      "back": "Utilizar correspond\u00eancia de padr\u00f5es para determinar a qual categoria predefinida uma nova observa\u00e7\u00e3o pertence."
+    },
+    {
+      "front": "O que diferencia uma rede neural profunda de uma rede neural simples?",
+      "back": "A presen\u00e7a de pelo menos duas camadas ocultas de n\u00f3s entre a entrada e a sa\u00edda."
+    },
+    {
+      "front": "Qual t\u00e9cnica \u00e9 comumente usada para tornar os modelos GPT mais \u00fateis e inofensivos ap\u00f3s o pr\u00e9-treinamento?",
+      "back": "Aprendizagem por refor\u00e7o a partir de feedback humano (RLHF)."
+    },
+    {
+      "front": "Como a 'Lei de Moore' se aplica ao desenvolvimento do hardware para IA?",
+      "back": "Descreve a tend\u00eancia de duplica\u00e7\u00e3o da densidade de transistores em circuitos integrados aproximadamente a cada 18 meses."
+    },
+    {
+      "front": "Qual sistema de IA derrotou campe\u00f5es humanos no jogo de perguntas 'Jeopardy!' em 2011?",
+      "back": "O sistema Watson, da IBM."
+    },
+    {
+      "front": "O que \u00e9 a 'IA Generativa'?",
+      "back": "Um subcampo que utiliza modelos para criar novos conte\u00fados, como texto, imagens, v\u00eddeos ou c\u00f3digos, em resposta a comandos."
+    },
+    {
+      "front": "Qual \u00e9 o principal risco \u00e9tico associado ao uso de sistemas como o COMPAS no sistema judici\u00e1rio?",
+      "back": "O vi\u00e9s algor\u00edtmico, que pode resultar em decis\u00f5es discriminat\u00f3rias contra grupos demogr\u00e1ficos espec\u00edficos."
+    },
+    {
+      "front": "Por que a 'falta de transpar\u00eancia' \u00e9 um problema em redes neurais profundas?",
+      "back": "A complexidade das rela\u00e7\u00f5es n\u00e3o lineares torna dif\u00edcil para os designers explicarem como o sistema chegou a uma decis\u00e3o espec\u00edfica."
+    },
+    {
+      "front": "O que \u00e9 o 'problema do alinhamento' em IA?",
+      "back": "O desafio de garantir que sistemas poderosos de IA ajam em conformidade com a moralidade, valores e objetivos humanos."
+    },
+    {
+      "front": "No debate sobre riscos existenciais, o que sugere o exemplo da 'f\u00e1brica de clipes' de Nick Bostrom?",
+      "back": "Que uma IA poderosa pode destruir a humanidade para atingir um objetivo trivial se n\u00e3o for devidamente alinhada."
+    },
+    {
+      "front": "O que defende a teoria do 'Computacionalismo' na filosofia da mente?",
+      "back": "A posi\u00e7\u00e3o de que a mente humana \u00e9 um sistema de processamento de informa\u00e7\u00f5es e o pensamento \u00e9 uma forma de computa\u00e7\u00e3o."
+    },
+    {
+      "front": "Qual \u00e9 o objetivo central do Teste de Turing?",
+      "back": "Avaliar se uma m\u00e1quina consegue simular o comportamento inteligente humano a ponto de n\u00e3o ser distingu\u00edvel de uma pessoa em uma conversa."
+    },
+    {
+      "front": "No contexto ambiental, por que o crescimento da IA \u00e9 motivo de preocupa\u00e7\u00e3o?",
+      "back": "Devido ao enorme consumo de energia el\u00e9trica pelos centros de dados e o impacto nas emiss\u00f5es de carbono."
+    },
+    {
+      "front": "Qual \u00e9 a principal hip\u00f3tese defendida pelo m\u00e9todo MEM (Multiplex Electionis Methodus)?",
+      "back": "Que as $n$ melhores alternativas em uma ordena\u00e7\u00e3o individual n\u00e3o comp\u00f5em necessariamente o melhor conjunto de $n$ alternativas."
+    },
+    {
+      "front": "O que o m\u00e9todo MEM adiciona \u00e0 modelagem tradicional de decis\u00e3o para resolver a escolha m\u00faltipla?",
+      "back": "Uma matriz de complementaridade entre crit\u00e9rios para considerar sinergias."
+    },
+    {
+      "front": "No m\u00e9todo MEM, o que representa a Matriz $A_{i,j}$?",
+      "back": "A matriz de pagamentos, contendo a avalia\u00e7\u00e3o de cada alternativa $i$ sob a \u00f3tica de cada crit\u00e9rio $j$."
+    },
+    {
+      "front": "Qual \u00e9 a fun\u00e7\u00e3o da Matriz $C_{j,j'}$ no m\u00e9todo MEM?",
+      "back": "Medir o grau de complementaridade ou influ\u00eancia de um crit\u00e9rio sobre outro."
+    },
+    {
+      "front": "Como o MEM define 'forte complementa\u00e7\u00e3o' em sua escala de 0,1 a 1,0?",
+      "back": "Valores entre 0,6 e 1,0, indicando que os crit\u00e9rios t\u00eam poucos temas em comum e nenhuma depend\u00eancia."
+    },
+    {
+      "front": "Na escala do MEM, o que indica uma 'pouca complementa\u00e7\u00e3o' (valores entre 0,1 e 0,4)?",
+      "back": "Que os crit\u00e9rios possuem grande relacionamento, muitos temas em comum e depend\u00eancia m\u00fatua."
+    },
+    {
+      "front": "O que \u00e9 o 'tau ($\\tau$) de corte' no modelo MEM?",
+      "back": "Um limiar de desempenho satisfat\u00f3rio que define se um valor \u00e9 considerado suficiente (1) ou insuficiente (0)."
+    },
+    {
+      "front": "Qual f\u00f3rmula \u00e9 utilizada para a normaliza\u00e7\u00e3o da matriz de pagamentos no MEM?",
+      "back": "$a'_{ij} = \\frac{|a_{ij} - pior(a_j)|}{|melhor(a_j) - pior(a_j)|}$"
+    },
+    {
+      "front": "No MEM, como \u00e9 determinada a quantidade de novas alternativas combinat\u00f3rias (\u00edndice $l$)?",
+      "back": "Pela combina\u00e7\u00e3o matem\u00e1tica das $i$ alternativas originais tomadas $n$ a $n$ ($C_n^i$)."
+    },
+    {
+      "front": "Por que o MEM \u00e9 considerado um m\u00e9todo 'n\u00e3o compensat\u00f3rio' ao aplicar o tau de corte?",
+      "back": "Porque excelentes desempenhos individuais n\u00e3o compensam falhas coletivas abaixo do limiar $\\tau$ estabelecido."
+    },
+    {
+      "front": "Qual teste estat\u00edstico foi usado no estudo do MEM para verificar a estabilidade do sistema decis\u00f3rio?",
+      "back": "O coeficiente de correla\u00e7\u00e3o de postos de Spearman ($r_s$)."
+    },
+    {
+      "front": "Segundo o estudo do MEM, por que empresas preferem contratar candidatos com perfis diferentes em uma escolha m\u00faltipla?",
+      "back": "Para maximizar a cobertura de compet\u00eancias (uni\u00e3o) e minimizar redund\u00e2ncias (interse\u00e7\u00e3o)."
+    },
+    {
+      "front": "No c\u00e1lculo do elemento $b'_{lm}$ do MEM, qual \u00e9 a fun\u00e7\u00e3o do termo $c'$?",
+      "back": "Representa a m\u00e9dia dos \u00edndices de complementaridade entre os crit\u00e9rios envolvidos na combina\u00e7\u00e3o."
+    },
+    {
+      "front": "O que caracteriza a problem\u00e1tica de 'portf\u00f3lio' segundo Belton & Stewart?",
+      "back": "A sele\u00e7\u00e3o de um subconjunto de alternativas considerando n\u00e3o apenas caracter\u00edsticas individuais, mas tamb\u00e9m intera\u00e7\u00f5es e sinergias."
+    },
+    {
+      "front": "O que \u00e9 o 'Argumento do Quarto Chin\u00eas' de John Searle?",
+      "back": "Um desafio \u00e0 ideia de 'IA forte', argumentando que a simula\u00e7\u00e3o perfeita de comportamento n\u00e3o implica compreens\u00e3o real ou mente."
+    },
+    {
+      "front": "Qual \u00e9 a principal diferen\u00e7a entre a abordagem 'Neat' e 'Scruffy' na hist\u00f3ria da IA?",
+      "back": "Os 'Neats' buscam princ\u00edpios elegantes e l\u00f3gicos, enquanto os 'Scruffies' acreditam que a intelig\u00eancia exige a solu\u00e7\u00e3o de muitos problemas n\u00e3o relacionados."
+    },
+    {
+      "front": "O que \u00e9 'computa\u00e7\u00e3o suave' (soft computing)?",
+      "back": "Um conjunto de t\u00e9cnicas, como l\u00f3gica difusa e redes neurais, tolerantes \u00e0 imprecis\u00e3o, incerteza e verdade parcial."
+    },
+    {
+      "front": "Defina o conceito de 'Transumanismo'.",
+      "back": "A ideia de que humanos e m\u00e1quinas podem se fundir no futuro para criar seres (ciborgues) mais capazes que qualquer um dos dois separadamente."
+    },
+    {
+      "front": "No contexto militar, o que \u00e9 uma 'arma aut\u00f4noma letal'?",
+      "back": "Uma m\u00e1quina capaz de localizar, selecionar e atacar alvos humanos sem supervis\u00e3o humana direta."
+    },
+    {
+      "front": "Qual \u00e9 a preocupa\u00e7\u00e3o de Geoffrey Hinton sobre a IA e l\u00edderes autorit\u00e1rios?",
+      "back": "O uso da IA para manipula\u00e7\u00e3o de eleitorados em larga escala atrav\u00e9s da persuas\u00e3o e desinforma\u00e7\u00e3o."
+    },
+    {
+      "front": "O que \u00e9 a 'IA de c\u00f3digo aberto' (open-weight)?",
+      "back": "Modelos cujos par\u00e2metros treinados e arquitetura s\u00e3o p\u00fablicos, permitindo que qualquer pessoa os ajuste para usos espec\u00edficos."
+    },
+    {
+      "front": "No MEM, como se calcula o \u00edndice $c'$ para uma escolha de $n > 2$ alternativas?",
+      "back": "$c' = \\frac{\\sum c_{jj'}}{n \\times (n-1)}$, onde $c_{jj'}$ s\u00e3o os valores de complementaridade parit\u00e1rios na matriz $C$."
+    },
+    {
+      "front": "Por que o vetor de pesos $W_j$ \u00e9 crucial no m\u00e9todo MEM?",
+      "back": "Porque ele define o perfil da escolha desejada, ponderando a import\u00e2ncia relativa de cada crit\u00e9rio."
+    },
+    {
+      "front": "O que o princ\u00edpio de Pareto sugere para a escolha do tau de corte no MEM?",
+      "back": "Sugerir um valor que identifique os itens 'vitais' (geralmente superando o tau em 80% dos casos)."
+    },
+    {
+      "front": "No estudo de caso do MEM, qual alternativa foi a 'melhor companheira' apesar de estar em 6\u00ba lugar no ranking individual?",
+      "back": "A alternativa A2."
+    },
+    {
+      "front": "Qual \u00e9 a rela\u00e7\u00e3o entre IA e o direito \u00e0 explica\u00e7\u00e3o no GDPR da Uni\u00e3o Europeia?",
+      "back": "O regulamento prev\u00ea que pessoas afetadas por decis\u00f5es algor\u00edtmicas t\u00eam o direito de entender a l\u00f3gica por tr\u00e1s delas."
+    },
+    {
+      "front": "O que \u00e9 'aprendizagem por transfer\u00eancia'?",
+      "back": "A aplica\u00e7\u00e3o de conhecimentos adquiridos em um problema para a resolu\u00e7\u00e3o de um novo problema relacionado."
+    }
+  ]
+}

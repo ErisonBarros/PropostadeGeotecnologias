@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>Pontos.kml</name>
+	<Style id="s_ylw-pushpin_hl">
+		<IconStyle>
+			<scale>1.2</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/shapes/placemark_square_highlight.png</href>
+			</Icon>
+		</IconStyle>
+		<ListStyle>
+		</ListStyle>
+	</Style>
+	<StyleMap id="m_ylw-pushpin">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#s_ylw-pushpin</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#s_ylw-pushpin_hl</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="s_ylw-pushpin">
+		<IconStyle>
+			<scale>1.2</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/shapes/placemark_square.png</href>
+			</Icon>
+		</IconStyle>
+		<ListStyle>
+		</ListStyle>
+	</Style>
+	<Folder>
+		<name>Pontos</name>
+		<open>1</open>
+		<Placemark>
+			<name>Ponto 1</name>
+			<Camera>
+				<longitude>-35.12581214947432</longitude>
+				<latitude>-7.896216198754543</latitude>
+				<altitude>55960.99075147799</altitude>
+				<heading>89.98737165506643</heading>
+				<tilt>0.01136230297544301</tilt>
+				<roll>90.00950057752078</roll>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</Camera>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-35.09829472424462,-7.895451782962533,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Ponto 2</name>
+			<LookAt>
+				<gx:TimeSpan>
+					<begin>2020-08-25T23:59:59Z</begin>
+					<end>2020-08-26</end>
+				</gx:TimeSpan>
+				<gx:ViewerOptions>
+					<gx:option name="historicalimagery"></gx:option>
+					<gx:option enabled="0" name="sunlight"></gx:option>
+					<gx:option enabled="0" name="streetview"></gx:option>
+				</gx:ViewerOptions>
+				<longitude>-35.09622208781851</longitude>
+				<latitude>-7.894205023219835</latitude>
+				<altitude>0</altitude>
+				<heading>-4.719272549346194</heading>
+				<tilt>20.1175175050595</tilt>
+				<range>1811.77730408051</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-35.10153290312955,-7.895751910352127,0</coordinates>
+			</Point>
+		</Placemark>
+		<Placemark>
+			<name>Ponto 3</name>
+			<LookAt>
+				<gx:TimeSpan>
+					<begin>2020-08-25T23:59:59Z</begin>
+					<end>2020-08-26</end>
+				</gx:TimeSpan>
+				<gx:ViewerOptions>
+					<gx:option name="historicalimagery"></gx:option>
+					<gx:option enabled="0" name="sunlight"></gx:option>
+					<gx:option enabled="0" name="streetview"></gx:option>
+				</gx:ViewerOptions>
+				<longitude>-35.09855511990614</longitude>
+				<latitude>-7.896422892306591</latitude>
+				<altitude>0</altitude>
+				<heading>-4.722631023947519</heading>
+				<tilt>22.53367953454474</tilt>
+				<range>1620.184933738061</range>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</LookAt>
+			<styleUrl>#m_ylw-pushpin</styleUrl>
+			<Point>
+				<gx:drawOrder>1</gx:drawOrder>
+				<coordinates>-35.10241925940712,-7.897121488938216,0</coordinates>
+			</Point>
+		</Placemark>
+	</Folder>
+</Document>
+</kml>

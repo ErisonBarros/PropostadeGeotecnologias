@@ -1,0 +1,347 @@
+{
+  "title": "Google Antigravity: Arquitetura e Fluxo da IDE Agent-First",
+  "root": {
+    "id": "node-0",
+    "text": "Google Antigravity",
+    "level": 1,
+    "children": [
+      {
+        "id": "node-1",
+        "text": "Visão Geral",
+        "level": 2,
+        "children": [
+          {
+            "id": "node-7",
+            "text": "IDE baseada em IA",
+            "level": 3,
+            "children": [],
+            "expanded": false
+          },
+          {
+            "id": "node-8",
+            "text": "Fork do VS Code",
+            "level": 3,
+            "children": [],
+            "expanded": false
+          },
+          {
+            "id": "node-9",
+            "text": "Arquitetura Agent-First",
+            "level": 3,
+            "children": [],
+            "expanded": false
+          },
+          {
+            "id": "node-10",
+            "text": "Gratuito na fase Preview",
+            "level": 3,
+            "children": [],
+            "expanded": false
+          }
+        ],
+        "expanded": true
+      },
+      {
+        "id": "node-2",
+        "text": "Componentes Principais",
+        "level": 2,
+        "children": [
+          {
+            "id": "node-11",
+            "text": "Agent Manager (Missão Control)",
+            "level": 3,
+            "children": [
+              {
+                "id": "node-26",
+                "text": "Gerenciamento de múltiplos agentes",
+                "level": 4,
+                "children": [],
+                "expanded": false
+              },
+              {
+                "id": "node-28",
+                "text": "Visualização de status e tarefas",
+                "level": 4,
+                "children": [],
+                "expanded": false
+              }
+            ],
+            "expanded": true
+          },
+          {
+            "id": "node-13",
+            "text": "Navegador Integrado",
+            "level": 3,
+            "children": [
+              {
+                "id": "node-33",
+                "text": "Instância controlada do Chrome",
+                "level": 4,
+                "children": [],
+                "expanded": false
+              },
+              {
+                "id": "node-35",
+                "text": "Interação com DOM e captura de vídeo",
+                "level": 4,
+                "children": [],
+                "expanded": false
+              }
+            ],
+            "expanded": true
+          },
+          {
+            "id": "node-29",
+            "text": "Interface familiar VS Code",
+            "level": 4,
+            "children": [],
+            "expanded": false
+          },
+          {
+            "id": "node-30",
+            "text": "Auto-complete inteligente",
+            "level": 4,
+            "children": [],
+            "expanded": false
+          },
+          {
+            "id": "node-31",
+            "text": "Comandos inline (Cmd+I)",
+            "level": 4,
+            "children": [],
+            "expanded": false
+          },
+          {
+            "id": "node-32",
+            "text": "Painel lateral de chat (Cmd+L)",
+            "level": 4,
+            "children": [],
+            "expanded": false
+          }
+        ],
+        "expanded": true
+      },
+      {
+        "id": "node-3",
+        "text": "Modelos de IA",
+        "level": 2,
+        "children": [
+          {
+            "id": "node-14",
+            "text": "Gemini 3 (Pro e Flash)",
+            "level": 3,
+            "children": [],
+            "expanded": false
+          },
+          {
+            "id": "node-15",
+            "text": "Gemini 2.5",
+            "level": 3,
+            "children": [],
+            "expanded": false
+          },
+          {
+            "id": "node-16",
+            "text": "Claude 4.6 (Sonnet e Opus)",
+            "level": 3,
+            "children": [],
+            "expanded": false
+          },
+          {
+            "id": "node-17",
+            "text": "GPT-OSS-120B",
+            "level": 3,
+            "children": [],
+            "expanded": false
+          }
+        ],
+        "expanded": true
+      },
+      {
+        "id": "node-4",
+        "text": "Funcionalidades de Agente",
+        "level": 2,
+        "children": [
+          {
+            "id": "node-18",
+            "text": "Artefatos",
+            "level": 3,
+            "children": [
+              {
+                "id": "node-36",
+                "text": "Planos de implementação",
+                "level": 4,
+                "children": [],
+                "expanded": false
+              },
+              {
+                "id": "node-37",
+                "text": "Listas de tarefas",
+                "level": 4,
+                "children": [],
+                "expanded": false
+              },
+              {
+                "id": "node-38",
+                "text": "Walkthroughs (resumos)",
+                "level": 4,
+                "children": [],
+                "expanded": false
+              },
+              {
+                "id": "node-39",
+                "text": "Diferenças de código (diffs)",
+                "level": 4,
+                "children": [],
+                "expanded": false
+              }
+            ],
+            "expanded": true
+          },
+          {
+            "id": "node-19",
+            "text": "Customização",
+            "level": 3,
+            "children": [
+              {
+                "id": "node-40",
+                "text": "Rules (Regras globais/workspace)",
+                "level": 4,
+                "children": [],
+                "expanded": false
+              },
+              {
+                "id": "node-42",
+                "text": "Skills (Conhecimento especializado)",
+                "level": 4,
+                "children": [],
+                "expanded": false
+              }
+            ],
+            "expanded": true
+          },
+          {
+            "id": "node-20",
+            "text": "Modos de Operação",
+            "level": 3,
+            "children": [
+              {
+                "id": "node-43",
+                "text": "Planning Mode (Pesquisa profunda)",
+                "level": 4,
+                "children": [],
+                "expanded": false
+              },
+              {
+                "id": "node-44",
+                "text": "Fast Mode (Tarefas simples)",
+                "level": 4,
+                "children": [],
+                "expanded": false
+              }
+            ],
+            "expanded": true
+          }
+        ],
+        "expanded": true
+      },
+      {
+        "id": "node-5",
+        "text": "Segurança e Políticas",
+        "level": 2,
+        "children": [
+          {
+            "id": "node-21",
+            "text": "Políticas de Execução",
+            "level": 3,
+            "children": [
+              {
+                "id": "node-45",
+                "text": "Terminal (Off, Auto, Turbo)",
+                "level": 4,
+                "children": [],
+                "expanded": false
+              }
+            ],
+            "expanded": true
+          },
+          {
+            "id": "node-23",
+            "text": "Secure Mode",
+            "level": 3,
+            "children": [],
+            "expanded": false
+          }
+        ],
+        "expanded": true
+      },
+      {
+        "id": "node-6",
+        "text": "Prós e Contras",
+        "level": 2,
+        "children": [
+          {
+            "id": "node-24",
+            "text": "Vantagens",
+            "level": 3,
+            "children": [
+              {
+                "id": "node-48",
+                "text": "Geração de ativos (Imagens/Código)",
+                "level": 4,
+                "children": [],
+                "expanded": false
+              },
+              {
+                "id": "node-50",
+                "text": "Integração nativa com Chrome",
+                "level": 4,
+                "children": [],
+                "expanded": false
+              }
+            ],
+            "expanded": true
+          },
+          {
+            "id": "node-25",
+            "text": "Limitações Atuais",
+            "level": 3,
+            "children": [
+              {
+                "id": "node-51",
+                "text": "Instabilidade e bugs de interface",
+                "level": 4,
+                "children": [],
+                "expanded": false
+              },
+              {
+                "id": "node-52",
+                "text": "Alto consumo de recursos/bateria",
+                "level": 4,
+                "children": [],
+                "expanded": false
+              },
+              {
+                "id": "node-53",
+                "text": "Suporte a extensões incompleto",
+                "level": 4,
+                "children": [],
+                "expanded": false
+              },
+              {
+                "id": "node-54",
+                "text": "Problemas de navegação por teclado",
+                "level": 4,
+                "children": [],
+                "expanded": false
+              }
+            ],
+            "expanded": true
+          }
+        ],
+        "expanded": true
+      }
+    ],
+    "expanded": true
+  }
+}

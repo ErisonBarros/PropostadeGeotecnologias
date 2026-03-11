@@ -1,0 +1,611 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+<Document id="root_doc">
+<Schema name="AMOSTRAS" id="AMOSTRAS">
+	<SimpleField name="AMOSTRA" type="float"></SimpleField>
+	<SimpleField name="E(m)" type="float"></SimpleField>
+	<SimpleField name="N(m)" type="float"></SimpleField>
+	<SimpleField name="DIST P/BR-" type="float"></SimpleField>
+	<SimpleField name="DIST P/ CE" type="float"></SimpleField>
+	<SimpleField name="P(R$)" type="float"></SimpleField>
+	<SimpleField name="ÁREA" type="float"></SimpleField>
+	<SimpleField name="PU (R$)" type="float"></SimpleField>
+	<SimpleField name="CONDOMÍNI" type="string"></SimpleField>
+	<SimpleField name="COD_COND" type="float"></SimpleField>
+	<SimpleField name="DIST_PAD_B" type="float"></SimpleField>
+	<SimpleField name="DIST_PAD_C" type="float"></SimpleField>
+	<SimpleField name="NORM_BR408" type="float"></SimpleField>
+	<SimpleField name="NORM_CENTR" type="float"></SimpleField>
+</Schema>
+<Folder><name>AMOSTRAS</name>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#AMOSTRAS">
+		<SimpleData name="AMOSTRA">1</SimpleData>
+		<SimpleData name="E(m)">260512</SimpleData>
+		<SimpleData name="N(m)">9127015</SimpleData>
+		<SimpleData name="DIST P/BR-">500.000000000000000</SimpleData>
+		<SimpleData name="DIST P/ CE">685.179999999999950</SimpleData>
+		<SimpleData name="P(R$)">42000</SimpleData>
+		<SimpleData name="ÁREA">300.000000000000000</SimpleData>
+		<SimpleData name="PU (R$)">140.000000000000000</SimpleData>
+		<SimpleData name="CONDOMÍNI">NÃO</SimpleData>
+		<SimpleData name="COD_COND">0</SimpleData>
+		<SimpleData name="DIST_PAD_B">0.220000000000000</SimpleData>
+		<SimpleData name="DIST_PAD_C">0.270000000000000</SimpleData>
+		<SimpleData name="NORM_BR408">0.063000000000000</SimpleData>
+		<SimpleData name="NORM_CENTR">1.090000000000000</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-35.1721563089054,-7.89202836662601</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#AMOSTRAS">
+		<SimpleData name="AMOSTRA">2</SimpleData>
+		<SimpleData name="E(m)">261925</SimpleData>
+		<SimpleData name="N(m)">9126010</SimpleData>
+		<SimpleData name="DIST P/BR-">15.000000000000000</SimpleData>
+		<SimpleData name="DIST P/ CE">1920.009999999999991</SimpleData>
+		<SimpleData name="P(R$)">180000</SimpleData>
+		<SimpleData name="ÁREA">1000.000000000000000</SimpleData>
+		<SimpleData name="PU (R$)">180.000000000000000</SimpleData>
+		<SimpleData name="CONDOMÍNI">SIM</SimpleData>
+		<SimpleData name="COD_COND">1</SimpleData>
+		<SimpleData name="DIST_PAD_B">0.100000000000000</SimpleData>
+		<SimpleData name="DIST_PAD_C">0.580000000000000</SimpleData>
+		<SimpleData name="NORM_BR408">0.572000000000000</SimpleData>
+		<SimpleData name="NORM_CENTR">0.500000000000000</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-35.1593938363567,-7.90117901821266</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#AMOSTRAS">
+		<SimpleData name="AMOSTRA">3</SimpleData>
+		<SimpleData name="E(m)">258568</SimpleData>
+		<SimpleData name="N(m)">9129133</SimpleData>
+		<SimpleData name="DIST P/BR-">20.000000000000000</SimpleData>
+		<SimpleData name="DIST P/ CE">3035.019999999999982</SimpleData>
+		<SimpleData name="P(R$)">270000</SimpleData>
+		<SimpleData name="ÁREA">1924.000000000000000</SimpleData>
+		<SimpleData name="PU (R$)">140.330000000000013</SimpleData>
+		<SimpleData name="CONDOMÍNI">NÃO</SimpleData>
+		<SimpleData name="COD_COND">0</SimpleData>
+		<SimpleData name="DIST_PAD_B">0.100000000000000</SimpleData>
+		<SimpleData name="DIST_PAD_C">0.860000000000000</SimpleData>
+		<SimpleData name="NORM_BR408">0.567000000000000</SimpleData>
+		<SimpleData name="NORM_CENTR">0.030000000000000</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-35.1896789411026,-7.8727919702657</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#AMOSTRAS">
+		<SimpleData name="AMOSTRA">4</SimpleData>
+		<SimpleData name="E(m)">264520</SimpleData>
+		<SimpleData name="N(m)">9122899</SimpleData>
+		<SimpleData name="DIST P/BR-">300.000000000000000</SimpleData>
+		<SimpleData name="DIST P/ CE">5723.039999999999964</SimpleData>
+		<SimpleData name="P(R$)">150000</SimpleData>
+		<SimpleData name="ÁREA">5700.000000000000000</SimpleData>
+		<SimpleData name="PU (R$)">26.320000000000000</SimpleData>
+		<SimpleData name="CONDOMÍNI">NÃO</SimpleData>
+		<SimpleData name="COD_COND">0</SimpleData>
+		<SimpleData name="DIST_PAD_B">0.170000000000000</SimpleData>
+		<SimpleData name="DIST_PAD_C">1.530000000000000</SimpleData>
+		<SimpleData name="NORM_BR408">0.273000000000000</SimpleData>
+		<SimpleData name="NORM_CENTR">1.310000000000000</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-35.1360127093741,-7.92942109514214</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#AMOSTRAS">
+		<SimpleData name="AMOSTRA">5</SimpleData>
+		<SimpleData name="E(m)">260542</SimpleData>
+		<SimpleData name="N(m)">9123909</SimpleData>
+		<SimpleData name="DIST P/BR-">15.000000000000000</SimpleData>
+		<SimpleData name="DIST P/ CE">2628.280000000000200</SimpleData>
+		<SimpleData name="P(R$)">38000</SimpleData>
+		<SimpleData name="ÁREA">400.000000000000000</SimpleData>
+		<SimpleData name="PU (R$)">95.000000000000000</SimpleData>
+		<SimpleData name="CONDOMÍNI">SIM</SimpleData>
+		<SimpleData name="COD_COND">1</SimpleData>
+		<SimpleData name="DIST_PAD_B">0.100000000000000</SimpleData>
+		<SimpleData name="DIST_PAD_C">0.760000000000000</SimpleData>
+		<SimpleData name="NORM_BR408">0.572000000000000</SimpleData>
+		<SimpleData name="NORM_CENTR">0.160000000000000</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-35.172031238483,-7.92010508125443</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#AMOSTRAS">
+		<SimpleData name="AMOSTRA">6</SimpleData>
+		<SimpleData name="E(m)">260854</SimpleData>
+		<SimpleData name="N(m)">9125535</SimpleData>
+		<SimpleData name="DIST P/BR-">400.000000000000000</SimpleData>
+		<SimpleData name="DIST P/ CE">1240.579999999999927</SimpleData>
+		<SimpleData name="P(R$)">28000</SimpleData>
+		<SimpleData name="ÁREA">300.000000000000000</SimpleData>
+		<SimpleData name="PU (R$)">93.329999999999998</SimpleData>
+		<SimpleData name="CONDOMÍNI">NÃO</SimpleData>
+		<SimpleData name="COD_COND">0</SimpleData>
+		<SimpleData name="DIST_PAD_B">0.200000000000000</SimpleData>
+		<SimpleData name="DIST_PAD_C">0.410000000000000</SimpleData>
+		<SimpleData name="NORM_BR408">0.168000000000000</SimpleData>
+		<SimpleData name="NORM_CENTR">0.820000000000000</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-35.169125726687,-7.90542228548967</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#AMOSTRAS">
+		<SimpleData name="AMOSTRA">7</SimpleData>
+		<SimpleData name="E(m)">264141</SimpleData>
+		<SimpleData name="N(m)">9122658</SimpleData>
+		<SimpleData name="DIST P/BR-">617.000000000000000</SimpleData>
+		<SimpleData name="DIST P/ CE">5595.750000000000000</SimpleData>
+		<SimpleData name="P(R$)">50000</SimpleData>
+		<SimpleData name="ÁREA">1000.000000000000000</SimpleData>
+		<SimpleData name="PU (R$)">50.000000000000000</SimpleData>
+		<SimpleData name="CONDOMÍNI">NÃO</SimpleData>
+		<SimpleData name="COD_COND">0</SimpleData>
+		<SimpleData name="DIST_PAD_B">0.250000000000000</SimpleData>
+		<SimpleData name="DIST_PAD_C">1.500000000000000</SimpleData>
+		<SimpleData name="NORM_BR408">0.060000000000000</SimpleData>
+		<SimpleData name="NORM_CENTR">1.240000000000000</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-35.139460201201,-7.93158190986449</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#AMOSTRAS">
+		<SimpleData name="AMOSTRA">8</SimpleData>
+		<SimpleData name="E(m)">258360</SimpleData>
+		<SimpleData name="N(m)">9126516</SimpleData>
+		<SimpleData name="DIST P/BR-">1000.000000000000000</SimpleData>
+		<SimpleData name="DIST P/ CE">1707.140000000000100</SimpleData>
+		<SimpleData name="P(R$)">30000</SimpleData>
+		<SimpleData name="ÁREA">900.000000000000000</SimpleData>
+		<SimpleData name="PU (R$)">33.329999999999998</SimpleData>
+		<SimpleData name="CONDOMÍNI">NÃO</SimpleData>
+		<SimpleData name="COD_COND">0</SimpleData>
+		<SimpleData name="DIST_PAD_B">0.350000000000000</SimpleData>
+		<SimpleData name="DIST_PAD_C">0.520000000000000</SimpleData>
+		<SimpleData name="NORM_BR408">0.463000000000000</SimpleData>
+		<SimpleData name="NORM_CENTR">0.600000000000000</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-35.1916890102229,-7.89643703699415</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#AMOSTRAS">
+		<SimpleData name="AMOSTRA">9</SimpleData>
+		<SimpleData name="E(m)">260304</SimpleData>
+		<SimpleData name="N(m)">9127454</SimpleData>
+		<SimpleData name="DIST P/BR-">400.000000000000000</SimpleData>
+		<SimpleData name="DIST P/ CE">988.820000000000050</SimpleData>
+		<SimpleData name="P(R$)">30000</SimpleData>
+		<SimpleData name="ÁREA">1000.000000000000000</SimpleData>
+		<SimpleData name="PU (R$)">30.000000000000000</SimpleData>
+		<SimpleData name="CONDOMÍNI">NÃO</SimpleData>
+		<SimpleData name="COD_COND">0</SimpleData>
+		<SimpleData name="DIST_PAD_B">0.200000000000000</SimpleData>
+		<SimpleData name="DIST_PAD_C">0.340000000000000</SimpleData>
+		<SimpleData name="NORM_BR408">0.168000000000000</SimpleData>
+		<SimpleData name="NORM_CENTR">0.940000000000000</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-35.1740212017719,-7.88805042830588</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#AMOSTRAS">
+		<SimpleData name="AMOSTRA">10</SimpleData>
+		<SimpleData name="E(m)">261554</SimpleData>
+		<SimpleData name="N(m)">9125029</SimpleData>
+		<SimpleData name="DIST P/BR-">750.000000000000000</SimpleData>
+		<SimpleData name="DIST P/ CE">2087.440000000000055</SimpleData>
+		<SimpleData name="P(R$)">135000</SimpleData>
+		<SimpleData name="ÁREA">250.000000000000000</SimpleData>
+		<SimpleData name="PU (R$)">540.000000000000000</SimpleData>
+		<SimpleData name="CONDOMÍNI">SIM</SimpleData>
+		<SimpleData name="COD_COND">1</SimpleData>
+		<SimpleData name="DIST_PAD_B">0.280000000000000</SimpleData>
+		<SimpleData name="DIST_PAD_C">0.620000000000000</SimpleData>
+		<SimpleData name="NORM_BR408">0.200000000000000</SimpleData>
+		<SimpleData name="NORM_CENTR">0.420000000000000</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-35.1628034492366,-7.91002898873812</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#AMOSTRAS">
+		<SimpleData name="AMOSTRA">11</SimpleData>
+		<SimpleData name="E(m)">254832</SimpleData>
+		<SimpleData name="N(m)">9130808</SimpleData>
+		<SimpleData name="DIST P/BR-">300.000000000000000</SimpleData>
+		<SimpleData name="DIST P/ CE">6783.500000000000000</SimpleData>
+		<SimpleData name="P(R$)">70000</SimpleData>
+		<SimpleData name="ÁREA">360.000000000000000</SimpleData>
+		<SimpleData name="PU (R$)">194.439999999999998</SimpleData>
+		<SimpleData name="CONDOMÍNI">SIM</SimpleData>
+		<SimpleData name="COD_COND">1</SimpleData>
+		<SimpleData name="DIST_PAD_B">0.170000000000000</SimpleData>
+		<SimpleData name="DIST_PAD_C">1.800000000000000</SimpleData>
+		<SimpleData name="NORM_BR408">0.273000000000000</SimpleData>
+		<SimpleData name="NORM_CENTR">1.810000000000000</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-35.2234647914219,-7.85747382271196</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#AMOSTRAS">
+		<SimpleData name="AMOSTRA">12</SimpleData>
+		<SimpleData name="E(m)">263064</SimpleData>
+		<SimpleData name="N(m)">9122934</SimpleData>
+		<SimpleData name="DIST P/BR-">50.000000000000000</SimpleData>
+		<SimpleData name="DIST P/ CE">4653.560000000000400</SimpleData>
+		<SimpleData name="P(R$)">180000</SimpleData>
+		<SimpleData name="ÁREA">1000.000000000000000</SimpleData>
+		<SimpleData name="PU (R$)">180.000000000000000</SimpleData>
+		<SimpleData name="CONDOMÍNI">SIM</SimpleData>
+		<SimpleData name="COD_COND">1</SimpleData>
+		<SimpleData name="DIST_PAD_B">0.110000000000000</SimpleData>
+		<SimpleData name="DIST_PAD_C">1.260000000000000</SimpleData>
+		<SimpleData name="NORM_BR408">0.536000000000000</SimpleData>
+		<SimpleData name="NORM_CENTR">0.800000000000000</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-35.1492119464268,-7.92903679568931</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#AMOSTRAS">
+		<SimpleData name="AMOSTRA">13</SimpleData>
+		<SimpleData name="E(m)">265989</SimpleData>
+		<SimpleData name="N(m)">9122093</SimpleData>
+		<SimpleData name="DIST P/BR-">100.000000000000000</SimpleData>
+		<SimpleData name="DIST P/ CE">7378.270000000000437</SimpleData>
+		<SimpleData name="P(R$)">18000</SimpleData>
+		<SimpleData name="ÁREA">160.000000000000000</SimpleData>
+		<SimpleData name="PU (R$)">112.500000000000000</SimpleData>
+		<SimpleData name="CONDOMÍNI">NÃO</SimpleData>
+		<SimpleData name="COD_COND">0</SimpleData>
+		<SimpleData name="DIST_PAD_B">0.120000000000000</SimpleData>
+		<SimpleData name="DIST_PAD_C">1.950000000000000</SimpleData>
+		<SimpleData name="NORM_BR408">0.483000000000000</SimpleData>
+		<SimpleData name="NORM_CENTR">2.090000000000000</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-35.1227312310384,-7.9367749110222</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#AMOSTRAS">
+		<SimpleData name="AMOSTRA">14</SimpleData>
+		<SimpleData name="E(m)">258146</SimpleData>
+		<SimpleData name="N(m)">9128423</SimpleData>
+		<SimpleData name="DIST P/BR-">300.000000000000000</SimpleData>
+		<SimpleData name="DIST P/ CE">2722.369999999999891</SimpleData>
+		<SimpleData name="P(R$)">38400</SimpleData>
+		<SimpleData name="ÁREA">160.000000000000000</SimpleData>
+		<SimpleData name="PU (R$)">240.000000000000000</SimpleData>
+		<SimpleData name="CONDOMÍNI">SIM</SimpleData>
+		<SimpleData name="COD_COND">1</SimpleData>
+		<SimpleData name="DIST_PAD_B">0.170000000000000</SimpleData>
+		<SimpleData name="DIST_PAD_C">0.780000000000000</SimpleData>
+		<SimpleData name="NORM_BR408">0.273000000000000</SimpleData>
+		<SimpleData name="NORM_CENTR">0.120000000000000</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-35.1935381560976,-7.87918962030422</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#AMOSTRAS">
+		<SimpleData name="AMOSTRA">15</SimpleData>
+		<SimpleData name="E(m)">260385</SimpleData>
+		<SimpleData name="N(m)">9126309</SimpleData>
+		<SimpleData name="DIST P/BR-">1000.000000000000000</SimpleData>
+		<SimpleData name="DIST P/ CE">367.899999999999977</SimpleData>
+		<SimpleData name="P(R$)">380000</SimpleData>
+		<SimpleData name="ÁREA">2500.000000000000000</SimpleData>
+		<SimpleData name="PU (R$)">152.000000000000000</SimpleData>
+		<SimpleData name="CONDOMÍNI">NÃO</SimpleData>
+		<SimpleData name="COD_COND">0</SimpleData>
+		<SimpleData name="DIST_PAD_B">0.350000000000000</SimpleData>
+		<SimpleData name="DIST_PAD_C">0.190000000000000</SimpleData>
+		<SimpleData name="NORM_BR408">0.463000000000000</SimpleData>
+		<SimpleData name="NORM_CENTR">1.240000000000000</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-35.1733409969791,-7.89840395622647</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#AMOSTRAS">
+		<SimpleData name="AMOSTRA">16</SimpleData>
+		<SimpleData name="E(m)">260345</SimpleData>
+		<SimpleData name="N(m)">9125486</SimpleData>
+		<SimpleData name="DIST P/BR-">15.000000000000000</SimpleData>
+		<SimpleData name="DIST P/ CE">1045.630000000000109</SimpleData>
+		<SimpleData name="P(R$)">80000</SimpleData>
+		<SimpleData name="ÁREA">420.000000000000000</SimpleData>
+		<SimpleData name="PU (R$)">190.479999999999990</SimpleData>
+		<SimpleData name="CONDOMÍNI">NÃO</SimpleData>
+		<SimpleData name="COD_COND">0</SimpleData>
+		<SimpleData name="DIST_PAD_B">0.100000000000000</SimpleData>
+		<SimpleData name="DIST_PAD_C">0.360000000000000</SimpleData>
+		<SimpleData name="NORM_BR408">0.572000000000000</SimpleData>
+		<SimpleData name="NORM_CENTR">0.920000000000000</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-35.1737425591166,-7.90584120479062</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#AMOSTRAS">
+		<SimpleData name="AMOSTRA">17</SimpleData>
+		<SimpleData name="E(m)">262638</SimpleData>
+		<SimpleData name="N(m)">9123649</SimpleData>
+		<SimpleData name="DIST P/BR-">200.000000000000000</SimpleData>
+		<SimpleData name="DIST P/ CE">3834.590000000000146</SimpleData>
+		<SimpleData name="P(R$)">140000</SimpleData>
+		<SimpleData name="ÁREA">800.000000000000000</SimpleData>
+		<SimpleData name="PU (R$)">175.000000000000000</SimpleData>
+		<SimpleData name="CONDOMÍNI">SIM</SimpleData>
+		<SimpleData name="COD_COND">1</SimpleData>
+		<SimpleData name="DIST_PAD_B">0.150000000000000</SimpleData>
+		<SimpleData name="DIST_PAD_C">1.060000000000000</SimpleData>
+		<SimpleData name="NORM_BR408">0.378000000000000</SimpleData>
+		<SimpleData name="NORM_CENTR">0.410000000000000</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-35.1530406607923,-7.92255384420852</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#AMOSTRAS">
+		<SimpleData name="AMOSTRA">18</SimpleData>
+		<SimpleData name="E(m)">264462</SimpleData>
+		<SimpleData name="N(m)">9121564</SimpleData>
+		<SimpleData name="DIST P/BR-">1500.000000000000000</SimpleData>
+		<SimpleData name="DIST P/ CE">6604.609999999999673</SimpleData>
+		<SimpleData name="P(R$)">160000</SimpleData>
+		<SimpleData name="ÁREA">5000.000000000000000</SimpleData>
+		<SimpleData name="PU (R$)">32.000000000000000</SimpleData>
+		<SimpleData name="CONDOMÍNI">NÃO</SimpleData>
+		<SimpleData name="COD_COND">0</SimpleData>
+		<SimpleData name="DIST_PAD_B">0.470000000000000</SimpleData>
+		<SimpleData name="DIST_PAD_C">1.750000000000000</SimpleData>
+		<SimpleData name="NORM_BR408">0.988000000000000</SimpleData>
+		<SimpleData name="NORM_CENTR">1.720000000000000</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-35.1366009142042,-7.94148579984146</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#AMOSTRAS">
+		<SimpleData name="AMOSTRA">19</SimpleData>
+		<SimpleData name="E(m)">261145</SimpleData>
+		<SimpleData name="N(m)">9126457</SimpleData>
+		<SimpleData name="DIST P/BR-">200.000000000000000</SimpleData>
+		<SimpleData name="DIST P/ CE">1078.630000000000109</SimpleData>
+		<SimpleData name="P(R$)">19000</SimpleData>
+		<SimpleData name="ÁREA">272.000000000000000</SimpleData>
+		<SimpleData name="PU (R$)">69.849999999999994</SimpleData>
+		<SimpleData name="CONDOMÍNI">NÃO</SimpleData>
+		<SimpleData name="COD_COND">0</SimpleData>
+		<SimpleData name="DIST_PAD_B">0.150000000000000</SimpleData>
+		<SimpleData name="DIST_PAD_C">0.370000000000000</SimpleData>
+		<SimpleData name="NORM_BR408">0.378000000000000</SimpleData>
+		<SimpleData name="NORM_CENTR">0.900000000000000</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-35.1664440920085,-7.89710193975675</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#AMOSTRAS">
+		<SimpleData name="AMOSTRA">20</SimpleData>
+		<SimpleData name="E(m)">263196</SimpleData>
+		<SimpleData name="N(m)">9122743</SimpleData>
+		<SimpleData name="DIST P/BR-">20.000000000000000</SimpleData>
+		<SimpleData name="DIST P/ CE">4884.739999999999782</SimpleData>
+		<SimpleData name="P(R$)">80000</SimpleData>
+		<SimpleData name="ÁREA">630.000000000000000</SimpleData>
+		<SimpleData name="PU (R$)">126.980000000000004</SimpleData>
+		<SimpleData name="CONDOMÍNI">SIM</SimpleData>
+		<SimpleData name="COD_COND">1</SimpleData>
+		<SimpleData name="DIST_PAD_B">0.100000000000000</SimpleData>
+		<SimpleData name="DIST_PAD_C">1.320000000000000</SimpleData>
+		<SimpleData name="NORM_BR408">0.567000000000000</SimpleData>
+		<SimpleData name="NORM_CENTR">0.910000000000000</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-35.1480241300583,-7.93076945575382</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#AMOSTRAS">
+		<SimpleData name="AMOSTRA">21</SimpleData>
+		<SimpleData name="E(m)">264516</SimpleData>
+		<SimpleData name="N(m)">9122878</SimpleData>
+		<SimpleData name="DIST P/BR-">4000.000000000000000</SimpleData>
+		<SimpleData name="DIST P/ CE">5733.149999999999636</SimpleData>
+		<SimpleData name="P(R$)">150000</SimpleData>
+		<SimpleData name="ÁREA">5700.000000000000000</SimpleData>
+		<SimpleData name="PU (R$)">247.930000000000007</SimpleData>
+		<SimpleData name="CONDOMÍNI">NÃO</SimpleData>
+		<SimpleData name="COD_COND">0</SimpleData>
+		<SimpleData name="DIST_PAD_B">1.100000000000000</SimpleData>
+		<SimpleData name="DIST_PAD_C">1.530000000000000</SimpleData>
+		<SimpleData name="NORM_BR408">3.616000000000000</SimpleData>
+		<SimpleData name="NORM_CENTR">1.310000000000000</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-35.1360499553881,-7.92961073352848</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#AMOSTRAS">
+		<SimpleData name="AMOSTRA">22</SimpleData>
+		<SimpleData name="E(m)">264152</SimpleData>
+		<SimpleData name="N(m)">9122657</SimpleData>
+		<SimpleData name="DIST P/BR-">200.000000000000000</SimpleData>
+		<SimpleData name="DIST P/ CE">5604.439999999999600</SimpleData>
+		<SimpleData name="P(R$)">160000</SimpleData>
+		<SimpleData name="ÁREA">5000.000000000000000</SimpleData>
+		<SimpleData name="PU (R$)">32.000000000000000</SimpleData>
+		<SimpleData name="CONDOMÍNI">NÃO</SimpleData>
+		<SimpleData name="COD_COND">0</SimpleData>
+		<SimpleData name="DIST_PAD_B">0.150000000000000</SimpleData>
+		<SimpleData name="DIST_PAD_C">1.500000000000000</SimpleData>
+		<SimpleData name="NORM_BR408">0.378000000000000</SimpleData>
+		<SimpleData name="NORM_CENTR">1.250000000000000</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-35.1393605152771,-7.93159146166997</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#AMOSTRAS">
+		<SimpleData name="AMOSTRA">23</SimpleData>
+		<SimpleData name="E(m)">262533</SimpleData>
+		<SimpleData name="N(m)">9123641</SimpleData>
+		<SimpleData name="DIST P/BR-">200.000000000000000</SimpleData>
+		<SimpleData name="DIST P/ CE">3771.039999999999964</SimpleData>
+		<SimpleData name="P(R$)">130000</SimpleData>
+		<SimpleData name="ÁREA">800.000000000000000</SimpleData>
+		<SimpleData name="PU (R$)">162.500000000000000</SimpleData>
+		<SimpleData name="CONDOMÍNI">NÃO</SimpleData>
+		<SimpleData name="COD_COND">0</SimpleData>
+		<SimpleData name="DIST_PAD_B">0.150000000000000</SimpleData>
+		<SimpleData name="DIST_PAD_C">1.040000000000000</SimpleData>
+		<SimpleData name="NORM_BR408">0.378000000000000</SimpleData>
+		<SimpleData name="NORM_CENTR">0.380000000000000</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-35.1539930007957,-7.92262123808226</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#AMOSTRAS">
+		<SimpleData name="AMOSTRA">24</SimpleData>
+		<SimpleData name="E(m)">260502</SimpleData>
+		<SimpleData name="N(m)">9125910</SimpleData>
+		<SimpleData name="DIST P/BR-">300.000000000000000</SimpleData>
+		<SimpleData name="DIST P/ CE">728.200000000000045</SimpleData>
+		<SimpleData name="P(R$)">270000</SimpleData>
+		<SimpleData name="ÁREA">504.000000000000000</SimpleData>
+		<SimpleData name="PU (R$)">535.710000000000036</SimpleData>
+		<SimpleData name="CONDOMÍNI">NÃO</SimpleData>
+		<SimpleData name="COD_COND">0</SimpleData>
+		<SimpleData name="DIST_PAD_B">0.170000000000000</SimpleData>
+		<SimpleData name="DIST_PAD_C">0.280000000000000</SimpleData>
+		<SimpleData name="NORM_BR408">0.273000000000000</SimpleData>
+		<SimpleData name="NORM_CENTR">1.070000000000000</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-35.1722991715302,-7.90201605300024</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#AMOSTRAS">
+		<SimpleData name="AMOSTRA">25</SimpleData>
+		<SimpleData name="E(m)">259009</SimpleData>
+		<SimpleData name="N(m)">9125767</SimpleData>
+		<SimpleData name="DIST P/BR-">300.000000000000000</SimpleData>
+		<SimpleData name="DIST P/ CE">1283.700000000000045</SimpleData>
+		<SimpleData name="P(R$)">30000</SimpleData>
+		<SimpleData name="ÁREA">144.000000000000000</SimpleData>
+		<SimpleData name="PU (R$)">208.330000000000013</SimpleData>
+		<SimpleData name="CONDOMÍNI">SIM</SimpleData>
+		<SimpleData name="COD_COND">1</SimpleData>
+		<SimpleData name="DIST_PAD_B">0.170000000000000</SimpleData>
+		<SimpleData name="DIST_PAD_C">0.420000000000000</SimpleData>
+		<SimpleData name="NORM_BR408">0.273000000000000</SimpleData>
+		<SimpleData name="NORM_CENTR">0.800000000000000</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-35.1858410951909,-7.90323803032303</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#AMOSTRAS">
+		<SimpleData name="AMOSTRA">26</SimpleData>
+		<SimpleData name="E(m)">259722</SimpleData>
+		<SimpleData name="N(m)">9127391</SimpleData>
+		<SimpleData name="DIST P/BR-">1300.000000000000000</SimpleData>
+		<SimpleData name="DIST P/ CE">961.059999999999945</SimpleData>
+		<SimpleData name="P(R$)">380000</SimpleData>
+		<SimpleData name="ÁREA">2500.000000000000000</SimpleData>
+		<SimpleData name="PU (R$)">152.000000000000000</SimpleData>
+		<SimpleData name="CONDOMÍNI">NÃO</SimpleData>
+		<SimpleData name="COD_COND">0</SimpleData>
+		<SimpleData name="DIST_PAD_B">0.420000000000000</SimpleData>
+		<SimpleData name="DIST_PAD_C">0.340000000000000</SimpleData>
+		<SimpleData name="NORM_BR408">0.778000000000000</SimpleData>
+		<SimpleData name="NORM_CENTR">0.960000000000000</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-35.1793002653904,-7.88859244544852</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#AMOSTRAS">
+		<SimpleData name="AMOSTRA">27</SimpleData>
+		<SimpleData name="E(m)">258283</SimpleData>
+		<SimpleData name="N(m)">9128733</SimpleData>
+		<SimpleData name="DIST P/BR-">50.000000000000000</SimpleData>
+		<SimpleData name="DIST P/ CE">2862.829999999999927</SimpleData>
+		<SimpleData name="P(R$)">38400</SimpleData>
+		<SimpleData name="ÁREA">160.000000000000000</SimpleData>
+		<SimpleData name="PU (R$)">240.000000000000000</SimpleData>
+		<SimpleData name="CONDOMÍNI">NÃO</SimpleData>
+		<SimpleData name="COD_COND">0</SimpleData>
+		<SimpleData name="DIST_PAD_B">0.110000000000000</SimpleData>
+		<SimpleData name="DIST_PAD_C">0.810000000000000</SimpleData>
+		<SimpleData name="NORM_BR408">0.536000000000000</SimpleData>
+		<SimpleData name="NORM_CENTR">0.050000000000000</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-35.1922814871531,-7.87639404829895</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#AMOSTRAS">
+		<SimpleData name="AMOSTRA">28</SimpleData>
+		<SimpleData name="E(m)">262420</SimpleData>
+		<SimpleData name="N(m)">9126598</SimpleData>
+		<SimpleData name="DIST P/BR-">450.000000000000000</SimpleData>
+		<SimpleData name="DIST P/ CE">2355.300000000000182</SimpleData>
+		<SimpleData name="P(R$)">6000</SimpleData>
+		<SimpleData name="ÁREA">400.000000000000000</SimpleData>
+		<SimpleData name="PU (R$)">15.000000000000000</SimpleData>
+		<SimpleData name="CONDOMÍNI">NÃO</SimpleData>
+		<SimpleData name="COD_COND">0</SimpleData>
+		<SimpleData name="DIST_PAD_B">0.210000000000000</SimpleData>
+		<SimpleData name="DIST_PAD_C">0.690000000000000</SimpleData>
+		<SimpleData name="NORM_BR408">0.115000000000000</SimpleData>
+		<SimpleData name="NORM_CENTR">0.290000000000000</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-35.1548786838821,-7.89588716041462</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#AMOSTRAS">
+		<SimpleData name="AMOSTRA">29</SimpleData>
+		<SimpleData name="E(m)">261145</SimpleData>
+		<SimpleData name="N(m)">9126457</SimpleData>
+		<SimpleData name="DIST P/BR-">2000.000000000000000</SimpleData>
+		<SimpleData name="DIST P/ CE">1078.630000000000109</SimpleData>
+		<SimpleData name="P(R$)">55000</SimpleData>
+		<SimpleData name="ÁREA">828.000000000000000</SimpleData>
+		<SimpleData name="PU (R$)">66.430000000000007</SimpleData>
+		<SimpleData name="CONDOMÍNI">NÃO</SimpleData>
+		<SimpleData name="COD_COND">0</SimpleData>
+		<SimpleData name="DIST_PAD_B">0.600000000000000</SimpleData>
+		<SimpleData name="DIST_PAD_C">0.370000000000000</SimpleData>
+		<SimpleData name="NORM_BR408">1.514000000000000</SimpleData>
+		<SimpleData name="NORM_CENTR">0.900000000000000</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-35.1664440920085,-7.89710193975675</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#AMOSTRAS">
+		<SimpleData name="AMOSTRA">30</SimpleData>
+		<SimpleData name="E(m)">259912</SimpleData>
+		<SimpleData name="N(m)">9127369</SimpleData>
+		<SimpleData name="DIST P/BR-">170.000000000000000</SimpleData>
+		<SimpleData name="DIST P/ CE">888.620000000000005</SimpleData>
+		<SimpleData name="P(R$)">4750000</SimpleData>
+		<SimpleData name="ÁREA">47000.000000000000000</SimpleData>
+		<SimpleData name="PU (R$)">101.060000000000002</SimpleData>
+		<SimpleData name="CONDOMÍNI">NÃO</SimpleData>
+		<SimpleData name="COD_COND">0</SimpleData>
+		<SimpleData name="DIST_PAD_B">0.140000000000000</SimpleData>
+		<SimpleData name="DIST_PAD_C">0.320000000000000</SimpleData>
+		<SimpleData name="NORM_BR408">0.410000000000000</SimpleData>
+		<SimpleData name="NORM_CENTR">0.990000000000000</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-35.1775788740825,-7.88880027040588</coordinates></Point>
+  </Placemark>
+  <Placemark>
+	<ExtendedData><SchemaData schemaUrl="#AMOSTRAS">
+		<SimpleData name="AMOSTRA">31</SimpleData>
+		<SimpleData name="E(m)">262925</SimpleData>
+		<SimpleData name="N(m)">9122554</SimpleData>
+		<SimpleData name="DIST P/BR-">680.000000000000000</SimpleData>
+		<SimpleData name="DIST P/ CE">4867.420000000000073</SimpleData>
+		<SimpleData name="P(R$)">180000</SimpleData>
+		<SimpleData name="ÁREA">1000.000000000000000</SimpleData>
+		<SimpleData name="PU (R$)">180.000000000000000</SimpleData>
+		<SimpleData name="CONDOMÍNI">SIM</SimpleData>
+		<SimpleData name="COD_COND">1</SimpleData>
+		<SimpleData name="DIST_PAD_B">0.270000000000000</SimpleData>
+		<SimpleData name="DIST_PAD_C">1.320000000000000</SimpleData>
+		<SimpleData name="NORM_BR408">0.126000000000000</SimpleData>
+		<SimpleData name="NORM_CENTR">0.900000000000000</SimpleData>
+	</SchemaData></ExtendedData>
+      <Point><coordinates>-35.1504900386366,-7.9324651746732</coordinates></Point>
+  </Placemark>
+</Folder>
+</Document></kml>

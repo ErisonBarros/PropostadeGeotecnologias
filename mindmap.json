@@ -1,0 +1,185 @@
+{
+  "name": "Inteligência Artificial e Tomada de Decisão",
+  "children": [
+    {
+      "name": "Inteligência Artificial (IA)",
+      "children": [
+        {
+          "name": "Definição",
+          "children": [
+            {
+              "name": "Sistemas computacionais inteligentes"
+            },
+            {
+              "name": "Percepção, raciocínio e aprendizado"
+            },
+            {
+              "name": "Atingimento de metas definidas"
+            }
+          ]
+        },
+        {
+          "name": "Objetivos Principais",
+          "children": [
+            {
+              "name": "Raciocínio e solução de problemas"
+            },
+            {
+              "name": "Representação do conhecimento"
+            },
+            {
+              "name": "Planejamento e tomada de decisão"
+            },
+            {
+              "name": "Aprendizado de máquina (ML)"
+            },
+            {
+              "name": "Processamento de linguagem natural"
+            },
+            {
+              "name": "Percepção e inteligência social"
+            }
+          ]
+        },
+        {
+          "name": "Técnicas e Ferramentas",
+          "children": [
+            {
+              "name": "Busca e otimização"
+            },
+            {
+              "name": "Lógica formal e fuzzy"
+            },
+            {
+              "name": "Redes neurais artificiais"
+            },
+            {
+              "name": "Deep Learning e Transformers"
+            },
+            {
+              "name": "Modelos GPT e LLMs"
+            }
+          ]
+        },
+        {
+          "name": "Aplicações",
+          "children": [
+            {
+              "name": "Motores de busca e recomendações"
+            },
+            {
+              "name": "Saúde e medicina"
+            },
+            {
+              "name": "Veículos autônomos"
+            },
+            {
+              "name": "IA Generativa (texto, imagem, vídeo)"
+            },
+            {
+              "name": "Jogos e estratégia"
+            }
+          ]
+        },
+        {
+          "name": "Ética e Riscos",
+          "children": [
+            {
+              "name": "Privacidade e direitos autorais"
+            },
+            {
+              "name": "Viés algorítmico e justiça"
+            },
+            {
+              "name": "Desemprego tecnológico"
+            },
+            {
+              "name": "Desinformação e deepfakes"
+            },
+            {
+              "name": "Risco existencial e alinhamento"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Método Multicritério (MEM)",
+      "children": [
+        {
+          "name": "Conceito Central",
+          "children": [
+            {
+              "name": "Multiplex Electionis Methodus"
+            },
+            {
+              "name": "Escolha múltipla em decisão única"
+            },
+            {
+              "name": "Sinergia e complementaridade"
+            }
+          ]
+        },
+        {
+          "name": "Hipótese de Pesquisa",
+          "children": [
+            {
+              "name": "As n melhores individuais != melhor conjunto"
+            },
+            {
+              "name": "Necessidade de considerar sinergia"
+            }
+          ]
+        },
+        {
+          "name": "Estrutura do Método",
+          "children": [
+            {
+              "name": "Matriz de pagamentos (A)"
+            },
+            {
+              "name": "Matriz de complementaridade (C)"
+            },
+            {
+              "name": "Vetor de pesos (W)"
+            },
+            {
+              "name": "Tau (τ) de corte"
+            }
+          ]
+        },
+        {
+          "name": "Procedimentos",
+          "children": [
+            {
+              "name": "Normalização de dados"
+            },
+            {
+              "name": "Combinação combinatória de alternativas"
+            },
+            {
+              "name": "Aplicação do limiar de satisfação (Tau)"
+            },
+            {
+              "name": "Cálculo de desempenho coletivo"
+            }
+          ]
+        },
+        {
+          "name": "Resultados do Experimento",
+          "children": [
+            {
+              "name": "Simulação de recrutamento"
+            },
+            {
+              "name": "Confirmação da hipótese nula"
+            },
+            {
+              "name": "Efeito não compensatório"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

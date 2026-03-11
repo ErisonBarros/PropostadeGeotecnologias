@@ -1,0 +1,49 @@
+# Google Antigravity: Arquitetura e Fluxo da IDE Agent-First
+
+## Google Antigravity
+  - Visão Geral
+    - IDE baseada em IA
+    - Fork do VS Code
+    - Arquitetura Agent-First
+    - Gratuito na fase Preview
+  - Componentes Principais
+    - Agent Manager (Missão Control)
+      - Gerenciamento de múltiplos agentes
+      - Visualização de status e tarefas
+    - Navegador Integrado
+      - Instância controlada do Chrome
+      - Interação com DOM e captura de vídeo
+    - Interface familiar VS Code
+    - Auto-complete inteligente
+    - Comandos inline (Cmd+I)
+    - Painel lateral de chat (Cmd+L)
+  - Modelos de IA
+    - Gemini 3 (Pro e Flash)
+    - Gemini 2.5
+    - Claude 4.6 (Sonnet e Opus)
+    - GPT-OSS-120B
+  - Funcionalidades de Agente
+    - Artefatos
+      - Planos de implementação
+      - Listas de tarefas
+      - Walkthroughs (resumos)
+      - Diferenças de código (diffs)
+    - Customização
+      - Rules (Regras globais/workspace)
+      - Skills (Conhecimento especializado)
+    - Modos de Operação
+      - Planning Mode (Pesquisa profunda)
+      - Fast Mode (Tarefas simples)
+  - Segurança e Políticas
+    - Políticas de Execução
+      - Terminal (Off, Auto, Turbo)
+    - Secure Mode
+  - Prós e Contras
+    - Vantagens
+      - Geração de ativos (Imagens/Código)
+      - Integração nativa com Chrome
+    - Limitações Atuais
+      - Instabilidade e bugs de interface
+      - Alto consumo de recursos/bateria
+      - Suporte a extensões incompleto
+      - Problemas de navegação por teclado
