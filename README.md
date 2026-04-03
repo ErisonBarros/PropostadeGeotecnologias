@@ -3,7 +3,7 @@
 ## Assistente técnico Especializado na Elaboração de propostas de serviços em geotecnologias
 ### Nome
 
-assistente-proposta-geotecnologias
+proposta-geotecnologias
 
 ### Descrição
 
