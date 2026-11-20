@@ -2,13 +2,21 @@
 
 ## Convenção de nomes
 
-`AAAA_MM_DD_vNN.md` — data da proposta (não a data de hoje) e versão com dois dígitos.
+Todos os artefatos compartilham a mesma base: `AAAA_MM_DD_vNN` (data da proposta, não a data de
+hoje, e versão com dois dígitos).
 
-| Situação | Nome |
+| Artefato | Nome |
 |---|---|
-| Primeira emissão de 20/11/2026 | `2026_11_20_v01.md` |
-| Revisão de valor | `2026_11_20_v02.md` |
-| Nova proposta no mesmo dia | `2026_11_20_v02.md` com `proposta.numero` diferente |
+| Documento Word | `Proposta_2026_11_20_v01.docx` |
+| PDF | `Proposta_2026_11_20_v01.pdf` |
+| Cópia em Markdown | `Proposta_2026_11_20_v01.md` |
+| Planilha de despesas | `despesa_2026_11_20_v01.xls` |
+
+| Situação | Versão |
+|---|---|
+| Primeira emissão de 20/11/2026 | `..._2026_11_20_v01` |
+| Revisão de valor no mesmo dia | `..._2026_11_20_v02` |
+| Segunda proposta no mesmo dia | nova versão (`v02`) com `proposta.numero` diferente |
 
 A versão vem de `proposta.versao` no YAML. Ao revisar, incremente a versão e mantenha o mesmo
 número de proposta — o histórico fica rastreável no Drive e no Git.
@@ -17,9 +25,9 @@ número de proposta — o histórico fica rastreável no Drive e no Git.
 
 | Destino | Caminho | Conteúdo |
 |---|---|---|
-| Pasta local de trabalho | `./saida_proposta/` | `.docx`, `.pdf`, `.md` |
-| Google Drive | pasta `Propostas_MD` dentro de `1Yqne1IwJO6AGC0Ng3_NGwQ3PNZU-2waR` (gerador-propostas-geoespaciais) | `.md` (sempre), `.docx` e `.pdf` (opcional) |
-| GitHub | `PropostadeGeotecnologias` (branch `erison.barros`) | `Propostas_MD/AAAA_MM_DD_vNN.md`, `Propostas_MD/INDICE.md`, `referencias/precos-observados.md`, `skill/proposta-geotecnologias/` |
+| Pasta local de trabalho | `./saida_proposta/` | `.docx`, `.pdf`, `.md`, `.xls` |
+| Google Drive | pasta `Propostas_MD` dentro de `1Yqne1IwJO6AGC0Ng3_NGwQ3PNZU-2waR` (gerador-propostas-geoespaciais) | `.md` (sempre), `.docx`, `.pdf` e `.xls` |
+| GitHub | `PropostadeGeotecnologias` (branch `erison.barros`) | `Propostas_MD/Proposta_AAAA_MM_DD_vNN.md`, `Propostas_MD/INDICE.md`, `referencias/precos-observados.md`, `skill/proposta-geotecnologias/` |
 
 O ID da subpasta é memorizado em `~/.cache/proposta-geo/config.json` após a primeira execução.
 Se a pasta for apagada no Drive, remova essa chave do cache para recriar.
@@ -28,10 +36,11 @@ Se a pasta for apagada no Drive, remova essa chave do cache para recriar.
 
 ```bash
 python3 scripts/publicar.py \
-  --md   saida_proposta/2026_11_20_v01.md \
-  --docx saida_proposta/Proposta_2026-014_cliente_2026-11-20_v01.docx \
-  --pdf  saida_proposta/Proposta_2026-014_cliente_2026-11-20_v01.pdf \
-  --aprendizado "Área de 45 ha, acesso difícil; fechado em R$ 150/ha" \
+  --md   saida_proposta/Proposta_2026_11_20_v01.md \
+  --docx saida_proposta/Proposta_2026_11_20_v01.docx \
+  --pdf  saida_proposta/Proposta_2026_11_20_v01.pdf \
+  --xls  saida_proposta/despesa_2026_11_20_v01.xls \
+  --aprendizado "45 ha, acesso difícil; fechado em R$ 150/ha" \
   --status enviada
 ```
 
@@ -44,8 +53,9 @@ Opções úteis: `--sem-drive`, `--sem-github`, `--sem-docx-pdf`, `--status apro
 ```
 PropostadeGeotecnologias/
 ├── Propostas_MD/
-│   ├── AAAA_MM_DD_vNN.md      ← cópia de arquivo de cada proposta
-│   └── INDICE.md              ← tabela gerada automaticamente
+│   ├── Proposta_AAAA_MM_DD_vNN.md   ← cópia de arquivo de cada proposta
+│   ├── LEIA-ME.md                   ← convenção de nomes
+│   └── INDICE.md                    ← tabela gerada automaticamente
 ├── referencias/
 │   └── precos-observados.md   ← memória de precificação (append a cada publicação)
 ├── skill/proposta-geotecnologias/  ← espelho versionado desta skill

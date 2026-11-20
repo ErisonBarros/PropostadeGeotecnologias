@@ -2,9 +2,9 @@
 name: proposta-geotecnologias
 description: >
   Gera propostas técnicas e comerciais de geotecnologias no layout R. Oliveira (DOCX com timbre,
-  PDF e cópia em Markdown), calcula honorários a partir da tabela de referência 2026, valida os
-  dados e arquiva a proposta no Google Drive (pasta Propostas_MD) e no repositório GitHub
-  PropostadeGeotecnologias. Use SEMPRE que o usuário pedir proposta, orçamento, cotação ou
+  PDF, cópia em Markdown e planilha de despesas de execução em XLS), calcula honorários a partir
+  da tabela de referência 2026, valida os dados e arquiva a proposta no Google Drive (pasta
+  Propostas_MD) e no repositório GitHub PropostadeGeotecnologias. Use SEMPRE que o usuário pedir proposta, orçamento, cotação ou
   documento comercial para georreferenciamento rural (SIGEF/INCRA), levantamento topográfico,
   aerolevantamento com drone, fotogrametria, cadastro técnico imobiliário, REURB, retificação de
   área, desmembramento, remembramento, regularização de edificação (Habite-se), perícia judicial,
@@ -14,16 +14,16 @@ description: >
 
 # Gerador de propostas de geotecnologias
 
-Automatiza o ciclo completo: **coleta → cálculo → redação → DOCX/PDF/MD → validação → arquivo no
-Drive e no GitHub**. A fonte única de verdade é um arquivo YAML; DOCX, PDF e Markdown saem dele,
-portanto nunca ficam divergentes.
+Automatiza o ciclo completo: **coleta → cálculo → redação → DOCX/PDF/MD/XLS → validação →
+arquivo no Drive e no GitHub**. A fonte única de verdade é um arquivo YAML; todos os artefatos
+saem dele, portanto nunca ficam divergentes.
 
 ## Fluxo obrigatório
 
 1. **Coletar** os dados que faltam (seção *Coleta*).
 2. **Precificar** com `references/honorarios-2026.md` (nunca inventar valores).
 3. **Redigir** escopo e metodologia com `references/catalogo-servicos.md`.
-4. **Gerar** DOCX + PDF + MD com `scripts/gerar_proposta.py`.
+4. **Gerar** DOCX + PDF + MD (+ XLS de despesas) com `scripts/gerar_proposta.py`.
 5. **Validar** com `scripts/validar_proposta.py` (erros bloqueiam a entrega).
 6. **Confirmar** o valor global com o profissional antes de publicar.
 7. **Publicar** no Drive e no GitHub com `scripts/publicar.py`.
@@ -45,6 +45,7 @@ bloco de perguntas. Obrigatórios para gerar:
 
 Recomendados: `imovel` (denominação, município/UF, matrícula, área em ha, perímetro, vértices),
 `escopo.entregaveis`, `escopo.nao_inclusos`, `metodologia.normas`, `cronograma`, `premissas`.
+Para a planilha de despesas: `custos_execucao` (mão de obra, material e serviços terceirizados).
 Se o serviço é cobrado por hectare, `imovel.area_ha` passa a ser obrigatório.
 
 Quando o usuário não informar um dado, **deixe vazio e registre a pendência** em `_interno.pendencias`
@@ -76,9 +77,15 @@ python3 scripts/gerar_proposta.py dados.yaml --saida ./saida_proposta
 
 Produz, em `./saida_proposta`:
 
-- `AAAA_MM_DD_vNN.md` — cópia de arquivo (nome definido por `proposta.data` + `proposta.versao`);
-- `Proposta_<numero>_<cliente>_AAAA-MM-DD_vNN.docx` — layout com timbre;
-- `Proposta_..._vNN.pdf` — via LibreOffice, quando disponível.
+- `Proposta_AAAA_MM_DD_vNN.docx` — layout com timbre;
+- `Proposta_AAAA_MM_DD_vNN.pdf` — via LibreOffice, quando disponível;
+- `Proposta_AAAA_MM_DD_vNN.md` — cópia de arquivo em Markdown;
+- `despesa_AAAA_MM_DD_vNN.xls` — planilha de despesas de execução (mão de obra, material e
+  serviços terceirizados), gerada quando `custos_execucao` tem itens. Use `--sem-despesas` para
+  omitir ou `scripts/gerar_despesas.py` para gerar isoladamente.
+
+A data e a versão vêm de `proposta.data` e `proposta.versao` — é delas que sai o nome dos quatro
+arquivos. Estrutura e fórmulas da planilha: `references/despesas-execucao.md`.
 
 O script cria sozinho um venv com `python-docx` e `PyYAML` na primeira execução; não instale nada
 manualmente. Retorna um JSON com valor global, extenso, somas e nome do MD — use esses números na
@@ -97,14 +104,15 @@ Corrija todos os itens de `erros` (bloqueiam) e avalie os `avisos`. Só siga par
 
 ```bash
 python3 scripts/publicar.py \
-  --md saida_proposta/2026_11_20_v01.md \
-  --docx saida_proposta/Proposta_....docx \
-  --pdf saida_proposta/Proposta_....pdf \
+  --md saida_proposta/Proposta_2026_11_20_v01.md \
+  --docx saida_proposta/Proposta_2026_11_20_v01.docx \
+  --pdf saida_proposta/Proposta_2026_11_20_v01.pdf \
+  --xls saida_proposta/despesa_2026_11_20_v01.xls \
   --aprendizado "45 ha, acesso difícil; fechado em R$ 150/ha" \
   --status enviada
 ```
 
-- **Drive:** envia o `.md` (e DOCX/PDF) para a pasta `Propostas_MD` dentro de
+- **Drive:** envia o `.md` (e DOCX/PDF/XLS) para a pasta `Propostas_MD` dentro de
   `1Yqne1IwJO6AGC0Ng3_NGwQ3PNZU-2waR` (gerador-propostas-geoespaciais), criando a pasta se não existir.
 - **GitHub:** copia o `.md` para `Propostas_MD/`, regenera `Propostas_MD/INDICE.md`, acrescenta a
   linha em `referencias/precos-observados.md` e faz commit/push no branch `erison.barros`.
@@ -116,9 +124,10 @@ Detalhes, convenção de nomes e solução de problemas: `references/publicacao.
 
 ## Entrega ao usuário
 
-Responda com: valor global e por extenso, resumo do escopo, prazo, condição de pagamento, links
-absolutos do DOCX/PDF/MD, e o resultado do arquivamento (Drive e commit). Liste as pendências que
-dependem do cliente. Nunca afirme que algo foi publicado sem o retorno do `publicar.py`.
+Responda com: valor global e por extenso, resumo do escopo, prazo, condição de pagamento, custo
+de execução (quando houver planilha), links absolutos do DOCX/PDF/MD/XLS, e o resultado do
+arquivamento (Drive e commit). Liste as pendências que dependem do cliente. Nunca afirme que algo
+foi publicado sem o retorno do `publicar.py`.
 
 ## Regras rígidas
 
@@ -141,5 +150,6 @@ Ao final de cada ciclo, compare o valor praticado com `references/honorarios-202
 
 Arquivos de apoio: `references/layout-identidade.md` (medidas, cores, tipografia),
 `references/catalogo-servicos.md` (escopo por serviço), `references/publicacao.md` (Drive/GitHub),
+`references/despesas-execucao.md` (planilha de custos),
 `templates/proposta.yaml` (esquema), `templates/exemplo-georreferenciamento.yaml` (exemplo completo),
 `templates/identidade/` (arte do timbre).

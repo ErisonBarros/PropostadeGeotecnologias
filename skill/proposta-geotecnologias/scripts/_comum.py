@@ -30,7 +30,7 @@ CACHE = Path.home() / ".cache" / "proposta-geo"
 def garantir_dependencias() -> None:
     """Garante python-docx e PyYAML; recria a si mesmo dentro de um venv."""
     faltando = []
-    for mod in ("docx", "yaml"):
+    for mod in ("docx", "yaml", "xlwt"):
         try:
             __import__(mod)
         except ImportError:
@@ -49,7 +49,7 @@ def garantir_dependencias() -> None:
             check=False,
         )
         subprocess.run(
-            [str(py), "-m", "pip", "install", "--quiet", "python-docx", "PyYAML"],
+            [str(py), "-m", "pip", "install", "--quiet", "python-docx", "PyYAML", "xlwt"],
             check=True,
         )
     # o python do venv é symlink para o interpretador do sistema: comparar prefix
@@ -239,6 +239,17 @@ def normalizar(d: dict) -> dict:
 
     d["imovel"]["area_ha"] = fnum(d["imovel"].get("area_ha"))
     d["imovel"]["perimetro_m"] = fnum(d["imovel"].get("perimetro_m"))
+
+    ce = d.setdefault("custos_execucao", {}) or {}
+    ce["encargos_sociais"] = fnum(ce.get("encargos_sociais"))
+    for chave in ("mao_de_obra", "materiais", "servicos_terceirizados"):
+        itens = ce.get(chave) or []
+        for it in itens:
+            for campo in ("qtd", "dias", "valor_diaria", "valor_unitario"):
+                if campo in it:
+                    it[campo] = fnum(it[campo])
+        ce[chave] = itens
+    d["custos_execucao"] = ce
     return d
 
 
@@ -297,11 +308,77 @@ def calcular(d: dict) -> dict:
     }
 
 
-def nome_arquivo(d: dict) -> str:
-    """Padrão exigido: ano_mes_dia_versão.md -> 2026_11_20_v01.md"""
+def calcular_despesas(d: dict) -> dict:
+    """Custo de execução por categoria: mão de obra, material e serviços terceirizados."""
+    ce = d.get("custos_execucao") or {}
+    encargos = float(ce.get("encargos_sociais") or 0)
+
+    mao = []
+    for it in ce.get("mao_de_obra") or []:
+        qtd = float(it.get("qtd") or 1)
+        dias = float(it.get("dias") or 0)
+        diaria = float(it.get("valor_diaria") or 0)
+        bruto = round(qtd * dias * diaria, 2)
+        mao.append({**it, "qtd": qtd, "dias": dias, "valor_diaria": diaria,
+                    "total_bruto": bruto,
+                    "encargos": round(bruto * encargos / 100.0, 2),
+                    "total": round(bruto * (1 + encargos / 100.0), 2)})
+
+    mat = []
+    for it in ce.get("materiais") or []:
+        qtd = float(it.get("qtd") or 1)
+        unit = float(it.get("valor_unitario") or 0)
+        mat.append({**it, "qtd": qtd, "valor_unitario": unit, "total": round(qtd * unit, 2)})
+
+    ter = []
+    for it in ce.get("servicos_terceirizados") or []:
+        qtd = float(it.get("qtd") or 1)
+        unit = float(it.get("valor_unitario") or 0)
+        ter.append({**it, "qtd": qtd, "valor_unitario": unit, "total": round(qtd * unit, 2)})
+
+    s_mao = round(sum(i["total"] for i in mao), 2)
+    s_mat = round(sum(i["total"] for i in mat), 2)
+    s_ter = round(sum(i["total"] for i in ter), 2)
+    total = round(s_mao + s_mat + s_ter, 2)
+
+    despesas_proposta = round(sum(
+        (float(it.get("qtd") or 1) * float(it.get("valor_unitario") or it.get("valor") or 0))
+        if not it.get("valor") else float(it["valor"])
+        for it in (d.get("investimento", {}).get("despesas") or [])), 2)
+
+    return {
+        "mao_de_obra": mao, "materiais": mat, "servicos_terceirizados": ter,
+        "encargos_sociais": encargos,
+        "soma_mao_de_obra": s_mao, "soma_materiais": s_mat, "soma_terceiros": s_ter,
+        "total": total,
+        "despesas_proposta": despesas_proposta,
+        "diferenca": round(despesas_proposta - total, 2),
+        "por_hectare": round(total / d["imovel"]["area_ha"], 2) if d["imovel"].get("area_ha") else 0,
+        "participacao": {
+            "mao_de_obra": round(s_mao / total * 100, 1) if total else 0,
+            "materiais": round(s_mat / total * 100, 1) if total else 0,
+            "servicos_terceirizados": round(s_ter / total * 100, 1) if total else 0,
+        },
+    }
+
+
+def nomes_arquivos(d: dict) -> dict:
+    """Nomes padronizados dos artefatos: Proposta_AAAA_MM_DD_vNN.<ext> e despesa_...xls."""
     p = d["proposta"]
     dt: date = p["data"]
-    return f"{dt:%Y_%m_%d}_v{int(p['versao']):02d}.md"
+    base = f"Proposta_{dt:%Y_%m_%d}_v{int(p['versao']):02d}"
+    return {
+        "base": base,
+        "docx": f"{base}.docx",
+        "pdf": f"{base}.pdf",
+        "md": f"{base}.md",
+        "despesas": f"despesa_{dt:%Y_%m_%d}_v{int(p['versao']):02d}.xls",
+    }
+
+
+def nome_arquivo(d: dict) -> str:
+    """Nome do Markdown de arquivo (mantido por compatibilidade)."""
+    return nomes_arquivos(d)["md"]
 
 
 def dump_json(obj) -> str:

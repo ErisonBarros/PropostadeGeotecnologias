@@ -99,6 +99,33 @@ pagamento:
   forma: "Transferência bancária ou PIX, mediante apresentação de nota fiscal."
   observacao: ""
 
+# -----------------------------------------------------------------------------
+# CUSTO DE EXECUÇÃO -> planilha despesa_AAAA_MM_DD_vNN.xls
+# Custo direto interno (mão de obra, material e terceirizados). NÃO é o preço:
+# honorários e margem ficam no bloco "investimento". Preencha quando o usuário
+# quiser detalhar a composição de custos; se vazio, a planilha não é gerada.
+# -----------------------------------------------------------------------------
+custos_execucao:
+  encargos_sociais: 0           # % sobre a mão de obra (CLT: informe o percentual; autônomo: 0)
+  mao_de_obra:
+    - funcao: ""                # ex.: "Topógrafo", "Auxiliar de campo"
+      qtd: 1
+      dias: 1                   # diárias de campo/escritório
+      valor_diaria: 0
+  materiais:
+    - item: ""                  # ex.: "Marco de concreto", "Plotagem A0", "EPI"
+      qtd: 1
+      unidade: "un"
+      valor_unitario: 0
+      observacao: ""
+  servicos_terceirizados:
+    - item: ""                  # ex.: "Locação de veículo 4x4"
+      fornecedor: ""
+      qtd: 1
+      unidade: "serviço"
+      valor_unitario: 0
+  observacoes: ""
+
 premissas:
   - ""
 

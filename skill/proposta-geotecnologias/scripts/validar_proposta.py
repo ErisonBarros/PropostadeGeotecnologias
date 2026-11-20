@@ -84,6 +84,27 @@ def validar(d: dict, calc: dict) -> tuple[list[str], list[str]]:
     if calc["soma_terceiros"] > 0:
         avisos.append("taxas de terceiros são informativas e não entram no valor global — confirme a redação")
 
+    # --- custo de execução (planilha .xls)
+    des = C.calcular_despesas(d)
+    if des["total"] > 0:
+        operacionais = des["soma_materiais"] + des["soma_terceiros"]
+        avisos.append(
+            f"custo de execução: {C.brl(des['total'])} "
+            f"(mão de obra {C.brl(des['soma_mao_de_obra'])}, material "
+            f"{C.brl(des['soma_materiais'])}, terceiros {C.brl(des['soma_terceiros'])})")
+        if not des["mao_de_obra"]:
+            avisos.append("custos_execucao sem mão de obra — confirme se a equipe é própria")
+        if calc["soma_despesas"] > 0 and operacionais > calc["soma_despesas"] * 1.2:
+            avisos.append(
+                f"material + terceiros da planilha ({C.brl(operacionais)}) superam as despesas "
+                f"lançadas na proposta ({C.brl(calc['soma_despesas'])}) — revise o item 7.2")
+        if des["total"] > calc["liquido"]:
+            erros.append(
+                f"custo de execução ({C.brl(des['total'])}) maior que o valor global da proposta "
+                f"({C.brl(calc['liquido'])}) — operação com prejuízo")
+    else:
+        avisos.append("custos_execucao vazio — a planilha despesa_*.xls não será gerada")
+
     # --- datas
     dt: date = p["data"]
     if dt > date.today():
@@ -118,11 +139,27 @@ def validar_arquivos(md: Path | None, docx: Path | None, calc: dict) -> list[str
     return avisos
 
 
+def validar_nomes(caminhos: dict, d: dict) -> list[str]:
+    """Confere se os artefatos seguem Proposta_AAAA_MM_DD_vNN.<ext> e despesa_....xls."""
+    esperado = C.nomes_arquivos(d)
+    avisos = []
+    for chave, caminho in caminhos.items():
+        if not caminho:
+            continue
+        nome = Path(caminho).name
+        if chave == "md" and not nome.startswith("Proposta_"):
+            avisos.append(f"nome fora do padrão: {nome} (esperado {esperado['md']})")
+        if chave == "xls" and not nome.startswith("despesa_"):
+            avisos.append(f"nome fora do padrão: {nome} (esperado {esperado['despesas']})")
+    return avisos
+
+
 def main() -> None:
     ap = argparse.ArgumentParser(description="Valida os dados da proposta.")
     ap.add_argument("dados")
     ap.add_argument("--md")
     ap.add_argument("--docx")
+    ap.add_argument("--xls")
     args = ap.parse_args()
 
     d = C.carregar_yaml(args.dados)
@@ -130,6 +167,9 @@ def main() -> None:
     erros, avisos = validar(d, calc)
     avisos += validar_arquivos(Path(args.md) if args.md else None,
                                Path(args.docx) if args.docx else None, calc)
+    if args.xls and not Path(args.xls).exists():
+        avisos.append(f"planilha de despesas não encontrada: {args.xls}")
+    avisos += validar_nomes({"md": args.md, "docx": args.docx, "xls": args.xls}, d)
 
     print(json.dumps({
         "arquivo": str(args.dados),

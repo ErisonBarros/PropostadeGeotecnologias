@@ -133,6 +133,48 @@ pagamento:
   forma: "Transferência bancária ou PIX, mediante apresentação de nota fiscal de serviços."
   observacao: "O atraso superior a 30 dias sujeita o saldo à atualização monetária pelo IPCA."
 
+custos_execucao:
+  encargos_sociais: 0
+  mao_de_obra:
+    - funcao: "Engenheiro cartógrafo (planejamento e processamento)"
+      qtd: 1
+      dias: 2
+      valor_diaria: 480
+    - funcao: "Topógrafo (rastreio GNSS e levantamento)"
+      qtd: 1
+      dias: 4
+      valor_diaria: 320
+    - funcao: "Auxiliar de campo"
+      qtd: 2
+      dias: 4
+      valor_diaria: 180
+  materiais:
+    - item: "Marco de concreto com chapa identificada"
+      qtd: 22
+      unidade: "un"
+      valor_unitario: 38
+      observacao: "vértices materializados"
+    - item: "Estacas, tinta, fita e EPI"
+      qtd: 1
+      unidade: "kit"
+      valor_unitario: 320
+    - item: "Plotagem A0 colorida"
+      qtd: 2
+      unidade: "prancha"
+      valor_unitario: 55
+  servicos_terceirizados:
+    - item: "Locação de veículo 4x4 com combustível"
+      fornecedor: "a definir"
+      qtd: 4
+      unidade: "diária"
+      valor_unitario: 280
+    - item: "Hospedagem da equipe (3 pessoas)"
+      fornecedor: "a definir"
+      qtd: 3
+      unidade: "pernoite"
+      valor_unitario: 240
+  observacoes: "Equipe sem vínculo CLT: encargos sociais zerados. Havendo vínculo, informe o percentual e o total é recalculado pelas fórmulas da planilha."
+
 premissas:
   - "O contratante deverá disponibilizar matrícula atualizada, CCIR, ITR e documentos pessoais antes do início dos trabalhos."
   - "A presença dos confrontantes ou de seus procuradores nas frentes de serviço é de responsabilidade do contratante."

@@ -985,6 +985,8 @@ def main() -> None:
     ap.add_argument("dados", help="arquivo YAML com os dados da proposta")
     ap.add_argument("--saida", default="saida_proposta", help="diretório de saída")
     ap.add_argument("--sem-pdf", action="store_true", help="não converter para PDF")
+    ap.add_argument("--sem-despesas", action="store_true",
+                    help="não gerar a planilha de despesas de execução (.xls)")
     args = ap.parse_args()
 
     d = C.carregar_yaml(args.dados)
@@ -992,20 +994,30 @@ def main() -> None:
     saida = Path(args.saida).expanduser().resolve()
     saida.mkdir(parents=True, exist_ok=True)
 
-    base = f"Proposta_{d['proposta'].get('numero') or 'sem-numero'}_" \
-           f"{C.slug(d['cliente'].get('nome','cliente'), 30)}_{d['proposta']['data']:%Y-%m-%d}_" \
-           f"v{int(d['proposta']['versao']):02d}"
-    docx_path = gerar_docx(d, calc, saida / f"{base}.docx")
-    md_path = saida / C.nome_arquivo(d)
+    nomes = C.nomes_arquivos(d)
+    docx_path = gerar_docx(d, calc, saida / nomes["docx"])
+    md_path = saida / nomes["md"]
     md_path.write_text(gerar_markdown(d, calc), encoding="utf-8")
 
     pdf_path = None if args.sem_pdf else converter_pdf(docx_path)
+
+    xls_path = None
+    des = C.calcular_despesas(d)
+    if not args.sem_despesas and des["total"] > 0:
+        try:
+            from gerar_despesas import gerar_xls
+            xls_path = gerar_xls(d, des, saida / nomes["despesas"])
+        except Exception as exc:  # noqa: BLE001
+            print(f"[aviso] planilha de despesas não gerada: {exc}", file=sys.stderr)
 
     print(C.dump_json({
         "docx": str(docx_path),
         "pdf": str(pdf_path) if pdf_path else None,
         "md": str(md_path),
+        "xls": str(xls_path) if xls_path else None,
         "nome_md": md_path.name,
+        "custo_execucao": des["total"],
+        "custo_execucao_fmt": C.brl(des["total"]),
         "valor_global": calc["liquido"],
         "valor_global_fmt": C.brl(calc["liquido"]),
         "extenso": calc["extenso"],

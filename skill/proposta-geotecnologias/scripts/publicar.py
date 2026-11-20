@@ -129,7 +129,9 @@ def enviar_drive(arquivo: Path, pasta_id: str) -> dict:
     achados = existentes.get("files") or []
     mime = {".md": "text/markdown", ".docx": "application/vnd.openxmlformats-officedocument"
                                             ".wordprocessingml.document",
-            ".pdf": "application/pdf"}.get(arquivo.suffix.lower(), "application/octet-stream")
+            ".pdf": "application/pdf",
+            ".xls": "application/vnd.ms-excel"}.get(arquivo.suffix.lower(),
+                                                    "application/octet-stream")
     if achados:
         fid = achados[0]["id"]
         gws(["files", "update", "--params", json.dumps({"fileId": fid,
@@ -163,11 +165,12 @@ def regerar_indice(repo: Path) -> Path:
     pasta.mkdir(parents=True, exist_ok=True)
     linhas = ["# Índice de propostas (Markdown)", "",
               "Arquivo gerado automaticamente pela skill `proposta-geotecnologias`. "
-              "Cada proposta é arquivada como `AAAA_MM_DD_vNN.md`.", "",
+              "Cada proposta é arquivada como `Proposta_AAAA_MM_DD_vNN.md`, com os "
+              "equivalentes `.docx`, `.pdf` e a planilha `despesa_AAAA_MM_DD_vNN.xls`.", "",
               "| Arquivo | Data | Versão | Cliente | Serviço / Objeto | Local | Área (ha) | Valor (R$) | Status |",
               "|---|---|---|---|---|---|---|---|---|"]
     itens = []
-    padrao = re.compile(r"^\d{4}_\d{2}_\d{2}_v\d{2}\.md$")
+    padrao = re.compile(r"^(Proposta_)?\d{4}_\d{2}_\d{2}_v\d{2}\.md$")
     for md in sorted(pasta.glob("*.md")):
         if not padrao.match(md.name):
             continue
@@ -244,6 +247,7 @@ def main() -> None:
     ap.add_argument("--md", required=True, help="arquivo Markdown da proposta")
     ap.add_argument("--docx", help="DOCX para enviar ao Drive (opcional)")
     ap.add_argument("--pdf", help="PDF para enviar ao Drive (opcional)")
+    ap.add_argument("--xls", help="planilha de despesas (.xls) para enviar ao Drive (opcional)")
     ap.add_argument("--drive-pai", default=DRIVE_PAI_PADRAO)
     ap.add_argument("--repo", default=REPO_PADRAO)
     ap.add_argument("--branch", default=BRANCH_PADRAO)
@@ -273,7 +277,7 @@ def main() -> None:
             pasta = garantir_subpasta(args.drive_pai, cfg)
             enviados = [enviar_drive(md, pasta)]
             if not args.sem_docx_pdf:
-                for extra in (args.docx, args.pdf):
+                for extra in (args.docx, args.pdf, args.xls):
                     if extra and Path(extra).exists():
                         enviados.append(enviar_drive(Path(extra).resolve(), pasta))
             resultado["drive"] = {"pasta_id": pasta, "arquivos": enviados,
