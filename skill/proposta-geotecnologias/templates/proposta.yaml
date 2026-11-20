@@ -1,0 +1,121 @@
+# =============================================================================
+# MODELO DE DADOS DA PROPOSTA — skill proposta-geotecnologias
+# Copie este arquivo, preencha e rode:
+#   python3 scripts/gerar_proposta.py dados.yaml --saida ./saida_proposta
+# Campos vazios ("") são omitidos do documento. Não invente valores: se um dado
+# não foi informado pelo cliente, deixe vazio e registre a pendência ao usuário.
+# =============================================================================
+
+proposta:
+  numero: "2026-001"            # número/controle interno (ex.: 2026-001 ou RO-2026-014)
+  data: "2026-11-20"            # AAAA-MM-DD (define o nome do arquivo MD)
+  versao: 1                     # 1, 2, 3... -> v01, v02 no nome do arquivo
+  validade_dias: 30
+  titulo: "PROPOSTA TÉCNICA E COMERCIAL"
+  subtitulo: ""                 # frase de uma linha que resume o serviço
+  local_data: "Recife/PE"       # cidade de emissão
+
+cliente:
+  nome: ""
+  documento: ""                 # CPF ou CNPJ
+  endereco: ""
+  contato: ""                   # telefone/WhatsApp
+  email: ""
+  representante: ""
+
+imovel:                         # preencha apenas o que existir (rural ou urbano)
+  denominacao: ""               # ex.: "Fazenda São Pedro", "Lote 12 da Quadra B"
+  municipio: ""
+  uf: "PE"
+  matricula: ""                 # nº da matrícula no CRI
+  area_ha: 0                    # área em hectares (urbano: converta m² -> ha)
+  perimetro_m: 0
+  vertices: 0
+
+apresentacao:                   # 1 a 3 parágrafos de carta de apresentação
+  - ""
+  - ""
+
+objeto:
+  resumo: ""                    # descrição objetiva do serviço contratado
+  finalidade: ""                # ex.: instruir ação de usucapião, certificação SIGEF...
+
+escopo:
+  etapas:
+    - titulo: ""
+      descricao: ""
+    - titulo: ""
+      descricao: ""
+  entregaveis:
+    - ""
+  nao_inclusos:
+    - ""
+
+metodologia:
+  paragrafos:
+    - ""
+  normas:
+    - ""
+
+cronograma:
+  prazo_dias: 0
+  etapas:
+    - fase: "1"
+      descricao: ""
+      prazo: "10 dias"
+  observacao: ""
+
+investimento:
+  honorarios:                   # qtd x valor_unitario = total
+    - item: ""
+      qtd: 1
+      unidade: "serviço"        # ha, m², ponto, serviço, mês...
+      valor_unitario: 0
+  despesas:                     # deslocamento, diárias, hospedagem, plotagem...
+    - item: ""
+      qtd: 1
+      unidade: "diária"
+      valor_unitario: 0
+  tributos:
+    - item: "ISSQN"
+      base: "honorarios"        # honorarios | honorarios_despesas | total
+      aliquota: 5               # % ; ou use "valor: 123.45" para valor fixo
+  terceiros:                    # informativo: NÃO entra no valor global
+    - item: "Taxa de certificação SIGEF (INCRA)"
+      valor: 0
+      observacao: "paga diretamente pelo contratante"
+  desconto:
+    percentual: 0
+    justificativa: ""
+
+pagamento:
+  condicoes:                    # os percentuais devem somar 100
+    - etapa: "Assinatura do contrato (entrada)"
+      percentual: 40
+    - etapa: "Protocolo / início dos trabalhos de campo"
+      percentual: 30
+    - etapa: "Entrega das peças técnicas"
+      percentual: 30
+  forma: "Transferência bancária ou PIX, mediante apresentação de nota fiscal."
+  observacao: ""
+
+premissas:
+  - ""
+
+disposicoes:                    # parágrafos adicionais (opcional)
+  - ""
+
+responsavel_tecnico:
+  nome: "Erison Rosa de Oliveira Barros"
+  titulo: "Engenheiro Cartógrafo"
+  crea: "CREA-PE 0000000000"
+  cpf: ""
+  email: ""
+  telefone: ""
+  art_inclusa: true
+  local_assinatura: "Recife/PE"
+
+# Observações internas (não vão para o documento; use para registrar pendências)
+_interno:
+  pendencias: []
+  observacoes: ""
