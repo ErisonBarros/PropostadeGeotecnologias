@@ -328,7 +328,7 @@ def bullets(doc, itens, marcador="•", tamanho=10.5) -> None:
 
 
 def tabela(doc, cabecalhos, linhas, larguras, alinhamentos=None, linha_total=False,
-           tam=9.5, cabecalho_visivel=True) -> None:
+           tam=9.5, cabecalho_visivel=True, manter_junto=False) -> None:
     ncols = len(larguras)
     t = doc.add_table(rows=0, cols=ncols)
     t.alignment = WD_TABLE_ALIGNMENT.CENTER
@@ -378,6 +378,11 @@ def tabela(doc, cabecalhos, linhas, larguras, alinhamentos=None, linha_total=Fal
                      cor=AZUL if ultima else GRAFITE)
 
     _larguras(t, larguras)
+    if manter_junto:
+        for row in t.rows[:-1]:
+            for cel in row.cells:
+                for p_ in cel.paragraphs:
+                    p_.paragraph_format.keep_with_next = True
     esp = doc.add_paragraph()
     esp.paragraph_format.space_after = Pt(0)
     esp.paragraph_format.space_before = Pt(0)
@@ -644,7 +649,8 @@ def gerar_docx(d: dict, calc: dict, destino: Path) -> Path:
     if calc["desconto"]:
         linhas.append([f"Desconto comercial ({C.pct(calc['desconto_pct'])})", f"- {C.brl(calc['desconto'])}"])
     linhas.append(["VALOR GLOBAL DA PROPOSTA", C.brl(calc["liquido"])])
-    tabela(doc, ["Descrição", "Valor"], linhas, [12.0, 5.0], ["left", "right"], linha_total=True)
+    tabela(doc, ["Descrição", "Valor"], linhas, [12.0, 5.0], ["left", "right"],
+           linha_total=True, manter_junto=True)
 
     par(doc, f"Valor global: {C.brl(calc['liquido'])} ({calc['extenso']}).", negrito=True, tamanho=10.5)
     if calc.get("por_hectare") and d["imovel"].get("area_ha"):
@@ -662,7 +668,7 @@ def gerar_docx(d: dict, calc: dict, destino: Path) -> Path:
         linhas = [[str(c.get("etapa", "")), C.pct(c.get("percentual")), C.brl(c.get("valor"))]
                   for c in conds]
         tabela(doc, ["Etapa", "%", "Valor"], linhas, [11.0, 2.4, 3.6],
-               ["left", "center", "right"])
+               ["left", "center", "right"], manter_junto=True)
     if pag.get("forma"):
         par(doc, str(pag["forma"]))
     if pag.get("observacao"):
