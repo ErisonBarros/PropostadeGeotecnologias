@@ -1,205 +1,145 @@
 ---
 name: proposta-geotecnologias
 description: >
-  Especializado na criação automática de propostas técnicas para serviços de geotecnologias,
-  gerando um arquivo .docx profissional pronto para download. Use esta skill SEMPRE que o
-  usuário solicitar propostas, orçamentos ou documentos técnicos relacionados a:
-  georreferenciamento de imóveis rurais, levantamentos topográficos, aerolevantamentos com
-  drones, cadastro técnico imobiliário, mapeamento GNSS/RTK, fotogrametria, geoprocessamento,
-  ou qualquer serviço de engenharia cartográfica. Também acione quando o usuário fornecer
-  dados de cliente, área em hectares, tipo de serviço e responsável técnico — mesmo em
-  texto livre — e pedir para gerar uma proposta, orçamento ou documento técnico.
+  Gera propostas técnicas e comerciais de geotecnologias no layout R. Oliveira (DOCX com timbre,
+  PDF e cópia em Markdown), calcula honorários a partir da tabela de referência 2026, valida os
+  dados e arquiva a proposta no Google Drive (pasta Propostas_MD) e no repositório GitHub
+  PropostadeGeotecnologias. Use SEMPRE que o usuário pedir proposta, orçamento, cotação ou
+  documento comercial para georreferenciamento rural (SIGEF/INCRA), levantamento topográfico,
+  aerolevantamento com drone, fotogrametria, cadastro técnico imobiliário, REURB, retificação de
+  área, desmembramento, remembramento, regularização de edificação (Habite-se), perícia judicial,
+  loteamento ou qualquer serviço de engenharia cartográfica e agrimensura — inclusive quando os
+  dados vierem em texto livre, planilha ou áudio transcrito.
 ---
 
-# 🧠 SKILL: Gerador de Proposta Técnica em Geotecnologias
+# Gerador de propostas de geotecnologias
 
-## 🎯 Objetivo
-Extrair dados de texto livre fornecido pelo usuário, calcular os valores automaticamente e
-gerar um arquivo `.docx` profissional no formato **Proposta Técnica**, pronto para download.
+Automatiza o ciclo completo: **coleta → cálculo → redação → DOCX/PDF/MD → validação → arquivo no
+Drive e no GitHub**. A fonte única de verdade é um arquivo YAML; DOCX, PDF e Markdown saem dele,
+portanto nunca ficam divergentes.
 
----
+## Fluxo obrigatório
 
-## 📥 Extração de Dados (Texto Livre)
+1. **Coletar** os dados que faltam (seção *Coleta*).
+2. **Precificar** com `references/honorarios-2026.md` (nunca inventar valores).
+3. **Redigir** escopo e metodologia com `references/catalogo-servicos.md`.
+4. **Gerar** DOCX + PDF + MD com `scripts/gerar_proposta.py`.
+5. **Validar** com `scripts/validar_proposta.py` (erros bloqueiam a entrega).
+6. **Confirmar** o valor global com o profissional antes de publicar.
+7. **Publicar** no Drive e no GitHub com `scripts/publicar.py`.
+8. **Entregar** os links dos arquivos e o resumo do que foi arquivado.
 
-O usuário pode fornecer os dados em qualquer formato textual. Extraia e mapeie para:
+## Coleta de dados
 
-| Campo | Exemplos de como o usuário pode informar |
+Monte o YAML a partir de `templates/proposta.yaml`. Pergunte **somente** o que faltar, em um único
+bloco de perguntas. Obrigatórios para gerar:
+
+| Campo | Observação |
 |---|---|
-| `nome_cliente` | "cliente: João Silva", "para: Fazenda São Pedro" |
-| `cpf_cnpj` | CPF ou CNPJ mencionado |
-| `tipo_servico` | "georreferenciamento", "levantamento topográfico", "drone", "aerolevantamento" |
-| `municipio` | cidade/estado mencionado |
-| `area_hectares` | "50 ha", "120 hectares", "área de 30ha" |
-| `valor_por_hectare` | "R$ 80/ha", "80 reais por hectare" |
-| `dias_trabalho` | "5 dias", "prazo de 3 dias" |
-| `custo_equipe_dia` | "equipe custa R$ 500/dia", "diária de R$ 800" |
-| `custo_deslocamento` | "deslocamento: R$ 300", "combustível R$ 200" |
-| `responsavel_tecnico` | "responsável: Eng. Rodrigo", "RT: José" |
+| `cliente.nome` | pessoa física ou jurídica |
+| `cliente.documento` | CPF/CNPJ (avise se ausente) |
+| `objeto.resumo` | descrição objetiva do serviço |
+| `investimento.honorarios` | ao menos um item com quantidade e valor unitário |
+| `pagamento.condicoes` | percentuais que somam 100% (padrão 40/30/30) |
+| `responsavel_tecnico.nome` e `crea` | para a ART e a assinatura |
 
-**Se algum campo obrigatório estiver ausente**, pergunte apenas o que falta antes de gerar.
+Recomendados: `imovel` (denominação, município/UF, matrícula, área em ha, perímetro, vértices),
+`escopo.entregaveis`, `escopo.nao_inclusos`, `metodologia.normas`, `cronograma`, `premissas`.
+Se o serviço é cobrado por hectare, `imovel.area_ha` passa a ser obrigatório.
 
----
+Quando o usuário não informar um dado, **deixe vazio e registre a pendência** em `_interno.pendencias`
+— não preencha com suposição.
 
-## 🧮 Cálculos Obrigatórios
+## Precificação
 
-Execute antes de gerar o documento:
+Leia `references/honorarios-2026.md` antes de calcular. Regras:
 
-```
-custo_levantamento = area_hectares × valor_por_hectare
-custo_equipe       = dias_trabalho × custo_equipe_dia
-custo_total        = custo_levantamento + custo_equipe + custo_deslocamento
-```
+- Georreferenciamento rural: calcule pelos dois regimes (faixa por hectare para áreas pequenas e
+  taxa decrescente por hectare com mínimo de serviço para áreas maiores) e adote o **maior**.
+- Separe sempre **honorários**, **despesas operacionais**, **tributos** (ISSQN) e **taxas de
+  terceiros**. Terceiros são informativos e ficam **fora** do valor global.
+- Desconto acima de 8% exige aprovação explícita; o validador emite aviso.
+- A ART está embutida nos honorários — declare isso na seção 11.
+- Consulte `referencias/precos-observados.md` do repositório para calibrar com o histórico real.
 
-Formate todos os valores monetários como `R$ 0,00` (padrão brasileiro).
+## Redação técnica
 
----
+Use `references/catalogo-servicos.md` para escolher o bloco de etapas, entregáveis e normas do
+serviço. Escreva em português formal, técnico e verificável: sem promessa de aprovação em órgão
+público, cartório ou certificação; sem norma inventada (cite apenas as listadas ou confirme antes).
 
-## 🧾 Geração Automática da Descrição Técnica
+## Geração
 
-Com base em `tipo_servico` e `municipio`, gere um texto técnico formal (3-5 parágrafos) que inclua:
-- Objetivo do levantamento
-- Metodologia aplicada (equipamentos, normas — ex: GNSS RTK, INCRA, SIGEF)
-- Produtos a serem entregues (ex: planta georreferenciada, shapefile, memorial descritivo)
-- Referências normativas pertinentes
-
----
-
-## 📄 Geração do Arquivo .docx
-
-Use `docx` (npm) para criar o documento. Siga rigorosamente o template abaixo.
-
-### Setup
 ```bash
-npm install -g docx 2>/dev/null || true
+python3 scripts/gerar_proposta.py dados.yaml --saida ./saida_proposta
 ```
 
-### Estrutura do Documento
+Produz, em `./saida_proposta`:
 
-```javascript
-const { Document, Packer, Paragraph, TextRun, Table, TableRow, TableCell,
-        AlignmentType, HeadingLevel, BorderStyle, WidthType, ShadingType,
-        VerticalAlign } = require('docx');
-const fs = require('fs');
+- `AAAA_MM_DD_vNN.md` — cópia de arquivo (nome definido por `proposta.data` + `proposta.versao`);
+- `Proposta_<numero>_<cliente>_AAAA-MM-DD_vNN.docx` — layout com timbre;
+- `Proposta_..._vNN.pdf` — via LibreOffice, quando disponível.
 
-// Dados preenchidos após extração e cálculo
-const dados = { /* ... */ };
+O script cria sozinho um venv com `python-docx` e `PyYAML` na primeira execução; não instale nada
+manualmente. Retorna um JSON com valor global, extenso, somas e nome do MD — use esses números na
+resposta ao usuário, sem recalcular.
 
-const border = { style: BorderStyle.SINGLE, size: 1, color: "CCCCCC" };
-const borders = { top: border, bottom: border, left: border, right: border };
-const cellMargins = { top: 80, bottom: 80, left: 120, right: 120 };
+## Validação
 
-const doc = new Document({
-  sections: [{
-    properties: {
-      page: {
-        size: { width: 11906, height: 16838 }, // A4
-        margin: { top: 1440, right: 1440, bottom: 1440, left: 1440 }
-      }
-    },
-    children: [
-      // 1. Título
-      new Paragraph({
-        alignment: AlignmentType.CENTER,
-        children: [new TextRun({ text: "PROPOSTA TÉCNICA", bold: true, size: 36 })]
-      }),
-      new Paragraph({ children: [new TextRun("")] }),
-
-      // 2. Seção 1 - Identificação
-      new Paragraph({ heading: HeadingLevel.HEADING_1, children: [new TextRun("1. IDENTIFICAÇÃO")] }),
-      // Tabela de identificação (4 linhas x 2 colunas)
-
-      // 3. Seção 2 - Parâmetros do Projeto
-      new Paragraph({ heading: HeadingLevel.HEADING_1, children: [new TextRun("2. PARÂMETROS DO PROJETO")] }),
-      // Tabela de parâmetros (5 linhas x 2 colunas)
-
-      // 4. Seção 3 - Planilha de Cálculo
-      new Paragraph({ heading: HeadingLevel.HEADING_1, children: [new TextRun("3. PLANILHA DE CÁLCULO")] }),
-      // Tabela de cálculo (4 linhas x 3 colunas) com total em negrito
-
-      // 5. Seção 4 - Descrição dos Serviços
-      new Paragraph({ heading: HeadingLevel.HEADING_1, children: [new TextRun("4. DESCRIÇÃO DOS SERVIÇOS")] }),
-      // Parágrafos com texto técnico gerado
-
-      // 6. Seção 5 - Prazo
-      new Paragraph({ heading: HeadingLevel.HEADING_1, children: [new TextRun("5. PRAZO")] }),
-      new Paragraph({ children: [new TextRun(`Prazo estimado: ${dados.dias_trabalho} dias corridos a partir da assinatura.`)] }),
-
-      // 7. Seção 6 - Valor Total
-      new Paragraph({ heading: HeadingLevel.HEADING_1, children: [new TextRun("6. VALOR TOTAL")] }),
-      new Paragraph({ children: [new TextRun({ text: `Valor global da proposta: ${dados.custo_total_fmt}`, bold: true })] }),
-
-      // 8. Seção 7 - Responsabilidade Técnica
-      new Paragraph({ heading: HeadingLevel.HEADING_1, children: [new TextRun("7. RESPONSABILIDADE TÉCNICA")] }),
-      new Paragraph({ children: [new TextRun(`Responsável Técnico: ${dados.responsavel_tecnico}`)] }),
-
-      // 9. Seção 8 - Considerações Finais
-      new Paragraph({ heading: HeadingLevel.HEADING_1, children: [new TextRun("8. CONSIDERAÇÕES FINAIS")] }),
-      new Paragraph({ children: [new TextRun("Esta proposta foi elaborada com base nos dados fornecidos pelo cliente e tem validade de 30 (trinta) dias.")] }),
-
-      // 10. Seção 9 - Assinatura
-      new Paragraph({ heading: HeadingLevel.HEADING_1, children: [new TextRun("9. ASSINATURA")] }),
-      new Paragraph({ children: [new TextRun("__________________________________")] }),
-      new Paragraph({ children: [new TextRun(dados.responsavel_tecnico)] }),
-    ]
-  }]
-});
-
-Packer.toBuffer(doc).then(buffer => {
-  fs.writeFileSync("/mnt/user-data/outputs/Proposta_Tecnica.docx", buffer);
-  console.log("Documento gerado com sucesso.");
-});
+```bash
+python3 scripts/validar_proposta.py dados.yaml --md saida_proposta/AAAA_MM_DD_vNN.md
 ```
 
-### Tabelas: Use sempre `WidthType.DXA` e `ShadingType.CLEAR`
+Corrija todos os itens de `erros` (bloqueiam) e avalie os `avisos`. Só siga para publicação com
+`"ok": true` e valor confirmado pelo responsável técnico.
 
-**Cabeçalho de tabela (header row):**
-```javascript
-new TableRow({
-  tableHeader: true,
-  children: [
-    new TableCell({
-      borders, margins: cellMargins,
-      shading: { fill: "1F4E79", type: ShadingType.CLEAR },
-      children: [new Paragraph({ alignment: AlignmentType.CENTER,
-        children: [new TextRun({ text: "Coluna", bold: true, color: "FFFFFF" })] })]
-    })
-  ]
-})
+## Publicação
+
+```bash
+python3 scripts/publicar.py \
+  --md saida_proposta/2026_11_20_v01.md \
+  --docx saida_proposta/Proposta_....docx \
+  --pdf saida_proposta/Proposta_....pdf \
+  --aprendizado "45 ha, acesso difícil; fechado em R$ 150/ha" \
+  --status enviada
 ```
 
-**Linha de total (destaque):**
-```javascript
-new TableRow({
-  children: [
-    new TableCell({
-      borders, margins: cellMargins,
-      shading: { fill: "D6E4F0", type: ShadingType.CLEAR },
-      children: [new Paragraph({ children: [new TextRun({ text: "TOTAL GERAL", bold: true })] })]
-    }),
-    // ...
-  ]
-})
-```
+- **Drive:** envia o `.md` (e DOCX/PDF) para a pasta `Propostas_MD` dentro de
+  `1Yqne1IwJO6AGC0Ng3_NGwQ3PNZU-2waR` (gerador-propostas-geoespaciais), criando a pasta se não existir.
+- **GitHub:** copia o `.md` para `Propostas_MD/`, regenera `Propostas_MD/INDICE.md`, acrescenta a
+  linha em `referencias/precos-observados.md` e faz commit/push no branch `erison.barros`.
+- Use `--sem-drive` ou `--sem-github` quando o conector não estiver disponível; informe o usuário
+  do que não foi arquivado.
+- `--sincronizar-skill` espelha a skill instalada em `skill/proposta-geotecnologias` do repositório.
 
----
+Detalhes, convenção de nomes e solução de problemas: `references/publicacao.md`.
 
-## 🔄 Fluxo de Execução
+## Entrega ao usuário
 
-1. Extrair todos os campos do texto livre do usuário
-2. Identificar campos faltantes e perguntar apenas o necessário
-3. Executar os cálculos
-4. Gerar a descrição técnica automaticamente
-5. Criar o arquivo `.docx` usando `docx` (npm)
-6. Salvar em `/mnt/user-data/outputs/Proposta_Tecnica.docx`
-7. Usar `present_files` para disponibilizar o download
+Responda com: valor global e por extenso, resumo do escopo, prazo, condição de pagamento, links
+absolutos do DOCX/PDF/MD, e o resultado do arquivamento (Drive e commit). Liste as pendências que
+dependem do cliente. Nunca afirme que algo foi publicado sem o retorno do `publicar.py`.
 
----
+## Regras rígidas
 
-## 🚫 Restrições
+- Não invente preços, áreas, matrículas, normas, prazos ou dados de cliente.
+- Não garanta aprovação, certificação, Habite-se ou registro — explicite a dependência de terceiros.
+- Não misture honorários, despesas, tributos e taxas de terceiros em um único total.
+- Não altere a ordem das 11 seções nem remova seções do layout.
+- Não publique proposta com valor não confirmado pelo profissional.
+- Não edite arquivos dentro de `Propostas/` do repositório (acervo histórico).
 
-- Não inventar dados que não foram fornecidos
-- Não usar unicode bullets — usar `LevelFormat.BULLET`
-- Não usar `\n` dentro de TextRun — usar Paragraphs separados
-- Não usar `WidthType.PERCENTAGE` em tabelas
-- Não omitir nenhuma seção do template
-- Formatar valores como `R$ 0,00` (vírgula decimal, ponto milhar)
+## Manutenção e aprendizado
+
+Ao final de cada ciclo, compare o valor praticado com `references/honorarios-2026.md`:
+
+1. desvio sistemático para baixo em 2+ propostas do mesmo serviço → proponha revisão de faixa;
+2. proposta aprovada acima da faixa → registre como novo teto;
+3. atualize `honorarios-2026.md` e a planilha de origem, publique com a mensagem
+   `honorarios: revisão de faixa — <serviço>` e mantenha `--sincronizar-skill` ativo para versionar
+   a skill no repositório.
+
+Arquivos de apoio: `references/layout-identidade.md` (medidas, cores, tipografia),
+`references/catalogo-servicos.md` (escopo por serviço), `references/publicacao.md` (Drive/GitHub),
+`templates/proposta.yaml` (esquema), `templates/exemplo-georreferenciamento.yaml` (exemplo completo),
+`templates/identidade/` (arte do timbre).

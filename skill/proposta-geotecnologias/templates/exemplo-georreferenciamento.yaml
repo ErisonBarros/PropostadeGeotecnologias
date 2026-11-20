@@ -1,0 +1,160 @@
+# EXEMPLO COMPLETO — georreferenciamento rural (SIGEF).
+# Copie, troque todos os dados do cliente/imóvel e ajuste os valores após confirmar
+# com o responsável técnico. Números e nomes aqui são fictícios.
+
+proposta:
+  numero: "2026-014"
+  data: "2026-11-20"
+  versao: 1
+  validade_dias: 30
+  titulo: "PROPOSTA TÉCNICA E COMERCIAL"
+  subtitulo: "Georreferenciamento de imóvel rural para certificação no SIGEF/INCRA"
+  local_data: "Recife/PE"
+
+cliente:
+  nome: "Proprietário Exemplo"
+  documento: "CPF 111.111.111-11"
+  endereco: "Rua das Acácias, 120, Centro, Paudalho/PE"
+  contato: "(81) 99999-0000"
+  email: "cliente@dominio.com"
+
+imovel:
+  denominacao: "Sítio Boa Esperança"
+  municipio: "Paudalho"
+  uf: "PE"
+  matricula: "MATRÍCULA — CRI de Paudalho"
+  area_ha: 45.2
+  perimetro_m: 3120
+  vertices: 22
+
+apresentacao:
+  - "A R. Oliveira Consultoria, atuante em engenharia cartográfica, agrimensura e regularização imobiliária, apresenta a presente proposta técnico-comercial para execução dos serviços de georreferenciamento do imóvel rural denominado Sítio Boa Esperança, situado no município de Paudalho/PE."
+  - "A proposta foi elaborada a partir dos dados disponibilizados pelo contratante e observa as normas técnicas do INCRA para certificação de imóveis rurais no Sistema de Gestão Fundiária (SIGEF), bem como as normas da ABNT aplicáveis a levantamentos topográficos."
+
+objeto:
+  resumo: "Execução de levantamento topográfico georreferenciado dos limites do imóvel rural Sítio Boa Esperança, com área aproximada de 45,2 ha, para fins de certificação no SIGEF/INCRA e posterior averbação/retificação na matrícula imobiliária."
+  finalidade: "Obtenção do certificado de georreferenciamento junto ao INCRA e regularização da área junto ao Registro de Imóveis competente."
+
+escopo:
+  etapas:
+    - titulo: "Planejamento e aquisição de dados"
+      descricao: "Análise da documentação disponível (matrícula, CCIR, ITR e plantas), verificação de sobreposição com imóveis certificados na base do SIGEF, definição da estratégia de levantamento e do plano de vértices."
+    - titulo: "Implantação e rastreio GNSS"
+      descricao: "Rastreio de base no vértice de referência do SBAS/SIRGAS2000, com receptor GNSS de dupla frequência, e transporte de coordenadas aos vértices de apoio, garantindo precisão compatível com a Norma Técnica para Georreferenciamento de Imóveis Rurais."
+    - titulo: "Levantamento dos limites e confrontações"
+      descricao: "Determinação das coordenadas dos vértices definidores dos limites, na presença dos confrontantes quando possível, com registro fotográfico, croqui e coleta de dados qualitativos (natureza do limite, tipo de vértice e nome dos confrontantes)."
+    - titulo: "Processamento e ajustamento"
+      descricao: "Processamento dos dados GNSS em linhas de base, ajustamento pelo método dos mínimos quadrados, cálculo de áreas e perímetros, geração do memorial descritivo e da planilha analítica de vértices."
+    - titulo: "Submissão e acompanhamento no SIGEF"
+      descricao: "Envio do arquivo de vértices e do memorial descritivo à Plataforma de Gestão Fundiária (SIGEF), acompanhamento da análise e atendimento às notificações técnicas até a certificação."
+  entregaveis:
+    - "Memorial descritivo georreferenciado com quadro analítico de vértices, em conformidade com a norma do INCRA."
+    - "Planilha de coordenadas (formato ODS/SHP) e arquivo de vértices nos formatos exigidos pelo SIGEF."
+    - "Planta do imóvel com indicação de vértices, confrontantes e área, em formato PDF e DWG."
+    - "Certificado de georreferenciamento emitido pelo INCRA/SIGEF e comprovantes de submissão."
+    - "Anotação de Responsabilidade Técnica (ART) emitida e recolhida junto ao CREA-PE."
+  nao_inclusos:
+    - "Taxas, emolumentos e custas de terceiros (INCRA, cartório, prefeitura), de responsabilidade do contratante."
+    - "Levantamento de dados jurídicos, pesquisas de cadeia dominial e serviços advocatícios."
+    - "Demarcação física, construção de cercas, marcos ou placas de identificação dos vértices."
+    - "Deslocamentos extraordinários decorrentes de alteração de local ou de novas convocações de confrontantes."
+
+metodologia:
+  paragrafos:
+    - "Os serviços serão executados com receptores GNSS de dupla frequência operando nos sistemas GPS e GLONASS, pelo método relativo estático e estático-rápido, tendo como referência o Sistema Geodésico Brasileiro (SIRGAS2000). O rastreio será apoiado em vértices com coordenadas conhecidas e precisão compatível com a classe exigida para o georreferenciamento de imóveis rurais."
+    - "O processamento e o ajustamento dos dados serão realizados em software topográfico com controle de qualidade estatístico (resíduos, desvio-padrão e elipses de erro), assegurando que as discrepâncias posicionais atendam aos limites estabelecidos pela norma vigente do INCRA."
+    - "A documentação técnica será produzida em conformidade com as exigências da Plataforma de Gestão Fundiária, incluindo o memorial descritivo, a planilha analítica e o arquivo de vértices, de modo a permitir a submissão direta ao SIGEF."
+  normas:
+    - "INCRA — Norma Técnica para Georreferenciamento de Imóveis Rurais (NTGIR), edição vigente."
+    - "INCRA — Manual Técnico de Limites e Confrontações e Manual do SIGEF."
+    - "ABNT NBR 13133 — Execução de levantamento topográfico."
+    - "ABNT NBR 14166 — Rede de Referência Cadastral Municipal."
+    - "Decreto-Lei nº 9.760/1946 e Lei nº 10.267/2001 (georreferenciamento de imóveis rurais)."
+
+cronograma:
+  prazo_dias: 60
+  etapas:
+    - fase: "1"
+      descricao: "Mobilização, análise documental e planejamento"
+      prazo: "7 dias"
+    - fase: "2"
+      descricao: "Levantamento de campo e rastreio GNSS"
+      prazo: "15 dias"
+    - fase: "3"
+      descricao: "Processamento, ajustamento e elaboração das peças técnicas"
+      prazo: "13 dias"
+    - fase: "4"
+      descricao: "Submissão ao SIGEF e acompanhamento até a certificação"
+      prazo: "25 dias"
+  observacao: "Os prazos das fases 3 e 4 podem ser afetados pelo tempo de resposta do INCRA e pela disponibilidade dos confrontantes."
+
+investimento:
+  honorarios:
+    - item: "Georreferenciamento rural — levantamento, processamento e peças técnicas (45,2 ha)"
+      qtd: 45.2
+      unidade: "ha"
+      valor_unitario: 150
+    - item: "Submissão e acompanhamento da certificação no SIGEF"
+      qtd: 1
+      unidade: "serviço"
+      valor_unitario: 1800
+  despesas:
+    - item: "Diárias de campo (equipe de 3 pessoas)"
+      qtd: 4
+      unidade: "diária"
+      valor_unitario: 420
+    - item: "Deslocamento Recife–Paudalho–Recife"
+      qtd: 4
+      unidade: "viagem"
+      valor_unitario: 180
+  tributos:
+    - item: "ISSQN"
+      base: "honorarios"
+      aliquota: 5
+  terceiros:
+    - item: "Taxa de análise e certificação SIGEF (INCRA)"
+      valor: 0
+      observacao: "isento para imóveis até 4 módulos fiscais; confirmar enquadramento"
+    - item: "Emolumentos de averbação/retificação (CRI de Paudalho)"
+      valor: 0
+      observacao: "conforme tabela do TJPE, calculada sobre o valor do imóvel"
+  desconto:
+    percentual: 0
+    justificativa: ""
+
+pagamento:
+  condicoes:
+    - etapa: "Assinatura do contrato (entrada)"
+      percentual: 40
+    - etapa: "Conclusão do levantamento de campo"
+      percentual: 30
+    - etapa: "Entrega das peças técnicas certificadas"
+      percentual: 30
+  forma: "Transferência bancária ou PIX, mediante apresentação de nota fiscal de serviços."
+  observacao: "O atraso superior a 30 dias sujeita o saldo à atualização monetária pelo IPCA."
+
+premissas:
+  - "O contratante deverá disponibilizar matrícula atualizada, CCIR, ITR e documentos pessoais antes do início dos trabalhos."
+  - "A presença dos confrontantes ou de seus procuradores nas frentes de serviço é de responsabilidade do contratante."
+  - "Acesso ao imóvel e autorização para entrada de equipe e equipamentos são de responsabilidade do contratante."
+  - "Não estão inclusos serviços de retificação administrativa em cartório, desmembramento, parcelamento ou loteamento."
+  - "A certificação pelo INCRA depende da análise do órgão e da inexistência de sobreposição com imóveis de terceiros, não sendo possível garantir prazo ou resultado."
+
+disposicoes:
+  - "A R. Oliveira Consultoria compromete-se a manter sigilo sobre as informações e documentos disponibilizados pelo contratante, utilizando-os exclusivamente para a execução do objeto desta proposta."
+  - "Alterações de escopo somente serão executadas mediante aditivo contratual e orçamento complementar aprovado pelas partes."
+
+responsavel_tecnico:
+  nome: "Erison Rosa de Oliveira Barros"
+  titulo: "Engenheiro Cartógrafo"
+  crea: "CREA-PE 0000000000"
+  email: "erison.barros@ufpe.br"
+  telefone: "(81) 98157-1227"
+  art_inclusa: true
+  local_assinatura: "Recife/PE"
+
+_interno:
+  pendencias:
+    - "Confirmar número da matrícula e área registral."
+    - "Verificar enquadramento em isenção da taxa do INCRA."
+  observacoes: "Honorário calculado na faixa de R$ 150,00/ha para área superior a 10 ha, com taxa mínima de serviço."

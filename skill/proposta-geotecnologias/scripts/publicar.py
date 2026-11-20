@@ -167,8 +167,9 @@ def regerar_indice(repo: Path) -> Path:
               "| Arquivo | Data | Versão | Cliente | Serviço / Objeto | Local | Área (ha) | Valor (R$) | Status |",
               "|---|---|---|---|---|---|---|---|---|"]
     itens = []
+    padrao = re.compile(r"^\d{4}_\d{2}_\d{2}_v\d{2}\.md$")
     for md in sorted(pasta.glob("*.md")):
-        if md.name.lower() == "indice.md":
+        if not padrao.match(md.name):
             continue
         m = metadados_md(md)
         itens.append((m.get("data", md.stem), md, m))
